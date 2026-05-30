@@ -72,6 +72,43 @@ header{
   opacity:0.7;
 }
 
+/* 🌿 SOCIAL LINKS */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:12px;
+  font-size:13px;
+}
+
+.socials a{
+  text-decoration:none;
+  color:var(--sage);
+  opacity:0.75;
+  transition:0.3s;
+  position:relative;
+}
+
+.socials a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0%;
+  height:1px;
+  background:var(--sage);
+  transition:0.3s;
+}
+
+.socials a:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+.socials a:hover::after{
+  width:100%;
+}
+
 /* SHOP BUTTON */
 .shop-btn{
   display:inline-block;
@@ -88,38 +125,6 @@ header{
 .shop-btn:hover{
   transform:translateY(-2px);
   background:#4f6b52;
-}
-
-/* EMAIL SUBSCRIBE (TOP RIGHT) */
-.subscribe{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background:white;
-  padding:10px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  display:flex;
-  gap:8px;
-  z-index:3;
-}
-
-.subscribe input{
-  border:none;
-  outline:none;
-  padding:6px;
-  font-size:12px;
-  width:140px;
-}
-
-.subscribe button{
-  border:none;
-  background:var(--sage);
-  color:white;
-  padding:6px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:12px;
 }
 
 /* MAIN */
@@ -144,7 +149,7 @@ h2{
   gap:20px;
 }
 
-/* PINTEREST CARD */
+/* CARD */
 .card{
   background:var(--card);
   border-radius:16px;
@@ -206,6 +211,13 @@ footer{
 
 <div class="logo">LaxNar Studio</div>
 <div class="tagline">Healing • Digital Journey • Soft Living</div>
+
+<!-- 🌿 SOCIAL LINKS -->
+<div class="socials">
+  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/?hl=en" target="_blank">Instagram</a>
+  <a href="https://www.threads.com/@laxnarstudio" target="_blank">Threads</a>
+</div>
 
 <a class="shop-btn" href="https://laxnarstudio.gumroad.com" target="_blank">
   Visit My Shop 🛍️
