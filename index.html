@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaxNar Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(135deg,#fff1f9,#eef3ff);
+    color:#333;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:70px 20px;
+    background: linear-gradient(135deg,#ffb6c1,#a6c1ee,#c2f0ff);
+    color:white;
+}
+
+header h1{
+    font-size:45px;
+    margin:0;
+}
+
+header p{
+    opacity:0.9;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    background:white;
+    padding:15px;
+    position:sticky;
+    top:0;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    z-index:10;
+}
+
+nav a{
+    text-decoration:none;
+    color:#7b5cff;
+    font-weight:500;
+}
+
+/* SECTIONS */
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.title{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+/* PINTEREST GRID */
+.grid{
+    column-count:3;
+    column-gap:20px;
+}
+
+.card{
+    display:inline-block;
+    width:100%;
+    margin-bottom:20px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card h3{
+    margin:0;
+    font-size:17px;
+}
+
+.card p{
+    font-size:13px;
+    color:#666;
+}
+
+/* BUTTONS */
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.read{background:#7b5cff;color:white;}
+.shop{background:#ff7aa2;color:white;}
+.save{background:#eee;}
+
+/* SHOP BOX */
+.shop-box{
+    background: linear-gradient(135deg,#ffe0f0,#e0f7ff);
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:13px;
+    color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.grid{column-count:2;}
+}
+@media(max-width:600px){
+.grid{column-count:1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>LaxNar Studio</h1>
+    <p>Healing • Digital Journey • Soft Manifestation Space</p>
+</header>
+
+<nav>
+    <a href="#blog">Blog</a>
+    <a href="#journey">Journey</a>
+    <a href="#shop">Shop</a>
+</nav>
+
+<!-- BLOG -->
+<div class="section" id="blog">
+    <div class="title">Healing Blogs</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <div class="card-content">
+                <h3>Healing the Mind Slowly</h3>
+                <p>You don’t have to rush your healing journey.</p>
+                <button class="btn read">Read Blog</button>
+                <button class="btn save">Save</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+            <div class="card-content">
+                <h3>Soft Life Manifestation Guide</h3>
+                <p>How to align your energy with ease.</p>
+                <button class="btn read">Read Blog</button>
+                <button class="btn save">Save</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- JOURNEY -->
+<div class="section" id="journey">
+    <div class="title">My Digital Journey</div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88">
+            <div class="card-content">
+                <h3>Starting From Zero</h3>
+                <p>I began my digital journey with no audience.</p>
+                <button class="btn read">Read Story</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+            <div class="card-content">
+                <h3>Building Digital Products</h3>
+                <p>Learning how to create and sell online.</p>
+                <button class="btn read">Read Story</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SHOP -->
+<div class="section" id="shop">
+    <div class="title">Digital Shop</div>
+
+    <div class="shop-box">
+        <h2>My Digital Products</h2>
+        <p>Templates • E-books • Guides for healing & growth</p>
+        <button class="btn shop">Visit Shop</button>
+    </div>
+</div>
+
+<footer>
+    © 2026 LaxNar Studio — Built with softness
+</footer>
+
+</body>
+</html>
