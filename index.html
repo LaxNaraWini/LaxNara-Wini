@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaxNar Studio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --cream:#fdf8f3;
+      --sage:#a3b18a;
+      --blush:#e7c6b3;
+      --dark:#2f2f2f;
+      --card:#ffffff;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Quicksand', sans-serif;
+    }
+
+    body{
+      background:var(--cream);
+      color:var(--dark);
+      overflow-x:hidden;
+    }
+
+    /* 🌸 PETALS BACKGROUND */
+    .petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .petals span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(231, 198, 179, 0.7);
+      border-radius: 50%;
+      animation: floatUp 14s linear infinite;
+    }
+
+    .petals span:nth-child(1){ left:5%; animation-delay:0s; }
+    .petals span:nth-child(2){ left:15%; animation-delay:2s; }
+    .petals span:nth-child(3){ left:25%; animation-delay:4s; }
+    .petals span:nth-child(4){ left:35%; animation-delay:1s; }
+    .petals span:nth-child(5){ left:45%; animation-delay:3s; }
+    .petals span:nth-child(6){ left:55%; animation-delay:5s; }
+    .petals span:nth-child(7){ left:65%; animation-delay:2.5s; }
+    .petals span:nth-child(8){ left:75%; animation-delay:4.5s; }
+    .petals span:nth-child(9){ left:85%; animation-delay:1.5s; }
+    .petals span:nth-child(10){ left:95%; animation-delay:3.5s; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      20% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* HEADER */
+    header{
+      text-align:center;
+      padding:60px 20px 30px;
+      position:relative;
+      z-index:1;
+    }
+
+    .logo{
+      font-family:'Great Vibes', cursive;
+      font-size:52px;
+      color:var(--sage);
+    }
+
+    .tagline{
+      margin-top:10px;
+      font-size:15px;
+      opacity:0.7;
+    }
+
+    /* SHOP BUTTON */
+    .shop-btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:10px 18px;
+      background:var(--sage);
+      color:white;
+      text-decoration:none;
+      border-radius:25px;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    .shop-btn:hover{
+      background:#8ea076;
+      transform:translateY(-2px);
+    }
+
+    /* MAIN */
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:20px;
+      position:relative;
+      z-index:1;
+    }
+
+    h2{
+      font-family:'Playfair Display', serif;
+      margin:40px 0 20px;
+      font-size:22px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      font-size:18px;
+    }
+
+    .card p{
+      font-size:13px;
+      opacity:0.75;
+      line-height:1.5;
+    }
+
+    .card a{
+      display:inline-block;
+      margin-top:12px;
+      font-size:13px;
+      color:var(--sage);
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      font-size:12px;
+      opacity:0.6;
+      position:relative;
+      z-index:1;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🌸 floating petals -->
+<div class="petals">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<header>
+  <div class="logo">LaxNar Studio</div>
+  <div class="tagline">Healing • Digital Journey • Soft Living</div>
+
+  <a class="shop-btn" href="https://laxnarstudio.gumroad.com" target="_blank">
+    Visit My Shop 🛍️
+  </a>
+</header>
+
+<div class="container">
+
+  <h2>🌿 Healing Blogs</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Healing the Mind Slowly</h3>
+      <p>A gentle reminder that healing is not fast — it is layered, quiet, and personal.</p>
+      <a href="healing-the-mind-slowly.html">Read Blog →</a>
+    </div>
+
+    <div class="card">
+      <h3>Soft Life Reset</h3>
+      <p>Choosing peace over pressure in a noisy digital world.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Emotional Overload Days</h3>
+      <p>What I do when everything feels too loud inside.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+  </div>
+
+  <h2>🚀 Digital Journey</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Starting From Zero Online</h3>
+      <p>Building digital products without an audience or pressure.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Why I Started Creating</h3>
+      <p>The shift from consuming to building something of my own.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 LaxNar Studio — built with softness
+</footer>
+
+</body>
+</html>
