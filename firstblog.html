@@ -3,75 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laxnar Studio — Healing Blog</title>
+<title>LaxNar Studio — Healing Blog</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* 🌿 BASE THEME */
 body{
   margin:0;
   font-family:Poppins;
-  background: linear-gradient(180deg, #fff7fb, #f3f0ff);
-  color:#333;
+  background: linear-gradient(180deg, #f6f1e7, #e9efe6, #f3f0e8);
+  color:#2f2f2f;
+  overflow-x:hidden;
 }
 
-/* brand */
+/* 🌿 soft floating shapes */
+.floater{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background:#a9bfa3;
+  border-radius:50%;
+  opacity:0.4;
+  animation: floatUp 12s linear infinite;
+  z-index:0;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(100vh); opacity:0;}
+  20%{opacity:0.6;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* 🌿 brand */
 .top-brand{
   position:fixed;
   top:18px;
   left:22px;
   font-family:"Brush Script MT", cursive;
   font-size:28px;
-  color:#b57edc;
+  color:#5f7f63;
   z-index:999;
 }
 
-/* layout */
+/* 🌿 layout */
 .blog-post{
   max-width:800px;
-  margin:80px auto;
-  padding:20px;
+  margin:90px auto;
+  padding:25px;
 }
 
-/* title */
+/* 🌿 title */
 h1{
   text-align:center;
   font-family:'Playfair Display', serif;
-  color:#b57edc;
-  font-size:40px;
+  color:#4f6b52;
+  font-size:42px;
 }
 
 .intro{
   text-align:center;
-  color:#666;
+  color:#5f5f5f;
   margin-bottom:40px;
 }
 
-/* content */
+/* 🌿 headings */
 h2{
   margin-top:30px;
-  color:#6a4c93;
+  color:#5f7f63;
   font-family:'Playfair Display', serif;
 }
 
+/* 🌿 text */
 p{
-  line-height:1.8;
-  color:#444;
+  line-height:1.9;
   font-size:16px;
+  color:#3f3f3f;
 }
 
-/* quote */
+/* 🌿 quote */
 .quote{
   margin-top:40px;
   padding:25px;
   text-align:center;
   font-style:italic;
-  color:#b57edc;
-  border-left:3px solid #ffd1ea;
-  border-right:3px solid #ffd1ea;
+  color:#4f6b52;
+  border-left:2px solid #a9bfa3;
+  border-right:2px solid #a9bfa3;
+  background: rgba(255,255,255,0.4);
+  border-radius:12px;
 }
 
-/* scroll animation */
+/* 🌿 fade animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -82,10 +106,88 @@ p{
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 🌿 READ OTHER BLOGS */
+.other-blogs{
+  max-width:900px;
+  margin:80px auto 40px;
+  padding:20px;
+}
+
+.other-blogs h3{
+  text-align:center;
+  color:#5f7f63;
+  font-family:'Playfair Display', serif;
+  margin-bottom:20px;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:15px;
+}
+
+.blog-card{
+  text-decoration:none;
+  padding:18px;
+  border-radius:14px;
+  background: rgba(255,255,255,0.5);
+  border:1px solid rgba(120,140,120,0.2);
+  transition:0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.blog-card:hover{
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.8);
+}
+
+.blog-card h4{
+  color:#4f6b52;
+  margin-bottom:6px;
+  font-family:'Playfair Display', serif;
+}
+
+.blog-card p{
+  font-size:13px;
+  color:#555;
+  line-height:1.4;
+}
+
+/* 🌿 button */
+.read-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 16px;
+  border-radius:20px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.read-btn:hover{
+  background:#4f6b52;
+  transform:scale(1.05);
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- 🌿 floating animations -->
+<script>
+for(let i=0;i<18;i++){
+  let d=document.createElement("div");
+  d.className="floater";
+  d.style.left=Math.random()*100+"vw";
+  d.style.animationDuration=(8+Math.random()*10)+"s";
+  d.style.opacity=Math.random();
+  document.body.appendChild(d);
+}
+</script>
 
 <div class="top-brand">LaxNar Studio</div>
 
@@ -115,25 +217,9 @@ One of the most important realizations in mental growth is understanding that th
 For example, your mind may say “I am not good enough” or “I am behind in life.” These thoughts feel real in the moment, but they are not facts. They are mental reactions shaped by comparison and fear. If you identify with every thought, you lose stability. But if you learn to observe them, you regain control.
 </p>
 
-<p>
-Think of your mind like a streaming platform. Thoughts are just content playing automatically. You don’t need to watch everything. You don’t need to react to everything. You can simply let some thoughts pass without engagement.
-</p>
-
 <h2>Real progress is quiet</h2>
 <p>
 One of the biggest misconceptions about growth is that it should feel obvious. People expect dramatic emotional changes or constant motivation. In reality, most progress is subtle.
-</p>
-
-<p>
-Progress looks like:
-- reacting slower instead of instantly reacting  
-- recovering faster after emotional stress  
-- noticing negative thoughts without believing them  
-- choosing discipline even when motivation is absent  
-</p>
-
-<p>
-These changes are not loud. They are not always emotionally rewarding. But they are real. And over time, they completely change how you experience life.
 </p>
 
 <h2>Discipline is stronger than motivation</h2>
@@ -141,55 +227,19 @@ These changes are not loud. They are not always emotionally rewarding. But they 
 Motivation is unstable. It depends on mood, environment, and emotional energy. Discipline, however, is structure. It is what remains when motivation disappears.
 </p>
 
-<p>
-If you only act when you feel inspired, your progress will always be inconsistent. But if you build small systems — waking up at a consistent time, completing small tasks daily, or sticking to simple habits — you create stability even on difficult days.
-</p>
-
-<p>
-Discipline is not about forcing yourself aggressively. It is about reducing decision fatigue. When actions become routine, your mind no longer has to negotiate every step.
-</p>
-
 <h2>Healing is not linear</h2>
 <p>
 There will be days when you feel clear and focused. There will also be days when everything feels heavy again. This does not mean you have regressed. It means healing is not a straight line.
 </p>
 
-<p>
-Think of growth like a graph that moves upward over time but contains fluctuations. The downward moments are not failures — they are part of the structure of improvement.
-</p>
-
-<p>
-What matters is the overall direction, not individual days.
-</p>
-
 <h2>Learning to pause without guilt</h2>
 <p>
-Rest is often misunderstood. Many people associate rest with laziness or delay. But in reality, rest is part of performance. Without recovery, the mind cannot function properly.
-</p>
-
-<p>
-Taking breaks does not mean you are giving up. It means you are maintaining long-term consistency. A rested mind makes better decisions, processes emotions more clearly, and avoids burnout.
-</p>
-
-<p>
-Learning to pause without guilt is a form of emotional maturity.
+Rest is often misunderstood. Many people associate rest with laziness or delay. But in reality, rest is part of performance.
 </p>
 
 <h2>You are still building yourself</h2>
 <p>
-Even when you feel stuck, something inside you is changing. Your reactions are shifting. Your awareness is expanding. Your ability to handle stress is slowly improving.
-</p>
-
-<p>
-You may not notice it immediately, but over time you will realize that situations that once overwhelmed you no longer affect you in the same way.
-</p>
-
-<p>
-You do not need to become a completely different person to feel better. You do not need to erase your past or fix every flaw instantly. What you need is consistency in small actions and patience with your own process.
-</p>
-
-<p>
-Life improves not when everything becomes perfect, but when you become more stable inside imperfect conditions.
+Even when you feel stuck, something inside you is changing. Your reactions are shifting. Your awareness is expanding.
 </p>
 
 <div class="quote">
@@ -198,11 +248,39 @@ Life improves not when everything becomes perfect, but when you become more stab
 
 </div>
 
+<!-- 🌿 READ OTHER BLOGS -->
+<div class="other-blogs">
+
+<h3>Read Other Blogs</h3>
+
+<div class="blog-grid">
+
+<a href="blog.html" class="blog-card">
+<h4>Healing the Mind Slowly</h4>
+<p>Learning how to stay steady while your thoughts change.</p>
+</a>
+
+<a href="#" class="blog-card">
+<h4>Letting Go of Overthinking</h4>
+<p>How to stop giving every thought control over your mind.</p>
+</a>
+
+<a href="#" class="blog-card">
+<h4>Discipline Over Motivation</h4>
+<p>Why consistency matters more than feeling inspired.</p>
+</a>
+
+</div>
+
+<a class="read-btn" href="index.html">Back to Home</a>
+
+</div>
+
 <script>
 const elements = document.querySelectorAll("h2, p, .quote");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
@@ -214,19 +292,6 @@ elements.forEach(el=>{
   observer.observe(el);
 });
 </script>
-
-<style>
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
 
 </body>
 </html>
