@@ -72,43 +72,6 @@ header{
   opacity:0.7;
 }
 
-/* 🌿 SOCIAL LINKS */
-.socials{
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  margin-top:12px;
-  font-size:13px;
-}
-
-.socials a{
-  text-decoration:none;
-  color:var(--sage);
-  opacity:0.75;
-  transition:0.3s;
-  position:relative;
-}
-
-.socials a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-3px;
-  width:0%;
-  height:1px;
-  background:var(--sage);
-  transition:0.3s;
-}
-
-.socials a:hover{
-  opacity:1;
-  transform:translateY(-2px);
-}
-
-.socials a:hover::after{
-  width:100%;
-}
-
 /* SHOP BUTTON */
 .shop-btn{
   display:inline-block;
@@ -196,6 +159,62 @@ footer{
   z-index:2;
 }
 
+/* 🌿 FLOATING SOCIAL BAR (RIGHT SIDE) */
+.social-bar{
+  position:fixed;
+  top:50%;
+  right:18px;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999;
+  transition:0.4s ease;
+}
+
+/* links */
+.social-bar a{
+  font-size:12px;
+  text-decoration:none;
+  color:var(--sage);
+  padding:6px 10px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  box-shadow:0 8px 18px rgba(0,0,0,0.06);
+  opacity:0.75;
+  position:relative;
+  transition:0.3s ease;
+}
+
+/* animated underline */
+.social-bar a::after{
+  content:"";
+  position:absolute;
+  left:10px;
+  bottom:4px;
+  width:0%;
+  height:1px;
+  background:var(--sage);
+  transition:0.3s ease;
+}
+
+.social-bar a:hover::after{
+  width:70%;
+}
+
+.social-bar a:hover{
+  opacity:1;
+  transform:translateX(-4px);
+}
+
+/* active highlight */
+.social-bar a.active{
+  background:white;
+  opacity:1;
+  font-weight:600;
+}
+
 </style>
 </head>
 
@@ -207,17 +226,17 @@ footer{
 <div class="doodle d3">❀</div>
 <div class="doodle d4">✧</div>
 
+<!-- 🌿 FLOATING SOCIAL BAR -->
+<div class="social-bar">
+  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank" class="active">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/?hl=en" target="_blank">Instagram</a>
+  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+</div>
+
 <header>
 
 <div class="logo">LaxNar Studio</div>
 <div class="tagline">Healing • Digital Journey • Soft Living</div>
-
-<!-- 🌿 SOCIAL LINKS -->
-<div class="socials">
-  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
-  <a href="https://www.instagram.com/laxnarstudio/?hl=en" target="_blank">Instagram</a>
-  <a href="https://www.threads.com/@laxnarstudio" target="_blank">Threads</a>
-</div>
 
 <a class="shop-btn" href="https://laxnarstudio.gumroad.com" target="_blank">
   Visit My Shop 🛍️
@@ -244,6 +263,25 @@ footer{
 <footer>
   © 2026 LaxNar Studio — soft digital journal
 </footer>
+
+<script>
+let lastScroll = 0;
+const bar = document.querySelector(".social-bar");
+
+window.addEventListener("scroll", () => {
+  let current = window.pageYOffset;
+
+  if (current > lastScroll) {
+    bar.style.opacity = "0";
+    bar.style.transform = "translateY(-50%) translateX(20px)";
+  } else {
+    bar.style.opacity = "1";
+    bar.style.transform = "translateY(-50%) translateX(0)";
+  }
+
+  lastScroll = current;
+});
+</script>
 
 </body>
 </html>
