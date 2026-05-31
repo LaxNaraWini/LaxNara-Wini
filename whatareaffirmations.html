@@ -38,13 +38,11 @@ body{
 
 /* 🌿 brand */
 .top-brand{
-  position:fixed;
-  top:18px;
-  left:22px;
+  text-align:center;
+  padding-top:20px;
   font-family:"Brush Script MT", cursive;
-  font-size:28px;
+  font-size:34px;
   color:#5f7f63;
-  z-index:999;
 }
   
 /* 🌿 layout */
@@ -160,20 +158,24 @@ p{
   z-index:999;
 }
 
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:70px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
 .blog-socials a{
   text-decoration:none;
   color:#5f7f63;
   font-size:13px;
-  padding:8px 12px;
+  padding:8px 14px;
   background:rgba(255,255,255,0.75);
   backdrop-filter:blur(8px);
   border-radius:999px;
   transition:0.3s;
-}
-
-.blog-socials a:hover{
-  background:white;
-  transform:translateY(-2px);
 }
   
 </style>
@@ -195,7 +197,7 @@ for(let i=0;i<20;i++){
 
 <div class="top-brand">LaxNar Studio</div>
 
-  <div class="blog-socials">
+<div class="blog-socials">
   <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
   <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
   <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
