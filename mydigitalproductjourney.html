@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaxNar Studio — My Digital Product Journey</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌿 BASE THEME */
+body{
+  margin:0;
+  font-family:Poppins;
+  background: linear-gradient(180deg, #f6f1e7, #e9efe6, #f3f0e8);
+  color:#2f2f2f;
+  overflow-x:hidden;
+}
+
+/* 🌿 floating particles */
+.floater{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:#a9bfa3;
+  border-radius:50%;
+  opacity:0.4;
+  animation: floatUp 14s linear infinite;
+  z-index:0;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(100vh); opacity:0;}
+  20%{opacity:0.6;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* 🌿 brand */
+.top-brand{
+  text-align:center;
+  padding-top:20px;
+  font-family:"Brush Script MT", cursive;
+  font-size:34px;
+  color:#5f7f63;
+}
+
+/* 🌿 layout */
+.blog-post{
+  max-width:800px;
+  margin:90px auto;
+  padding:25px;
+}
+
+/* 🌿 title */
+h1{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  color:#4f6b52;
+  font-size:42px;
+}
+
+.intro{
+  text-align:center;
+  color:#5f5f5f;
+  margin-bottom:40px;
+}
+
+/* 🌿 headings */
+h2{
+  margin-top:30px;
+  color:#5f7f63;
+  font-family:'Playfair Display', serif;
+}
+
+/* 🌿 text */
+p{
+  line-height:1.9;
+  font-size:16px;
+  color:#3f3f3f;
+}
+
+/* 🌿 quote */
+.quote{
+  margin-top:40px;
+  padding:25px;
+  text-align:center;
+  font-style:italic;
+  color:#4f6b52;
+  border-left:2px solid #a9bfa3;
+  border-right:2px solid #a9bfa3;
+  background: rgba(255,255,255,0.4);
+  border-radius:12px;
+}
+
+/* 🌿 CTA section */
+.cta{
+  margin-top:60px;
+  padding:25px;
+  border-radius:16px;
+  background: rgba(255,255,255,0.5);
+  border:1px solid rgba(120,140,120,0.2);
+  text-align:center;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 18px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.cta a:hover{
+  transform:scale(1.05);
+  background:#4f6b52;
+}
+
+/* 🌿 fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* socials */
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:70px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.blog-socials a{
+  text-decoration:none;
+  color:#5f7f63;
+  font-size:13px;
+  padding:8px 14px;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(8px);
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.back-home-bottom{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 22px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:999px;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<20;i++){
+  let d=document.createElement("div");
+  d.className="floater";
+  d.style.left=Math.random()*100+"vw";
+  d.style.animationDuration=(10+Math.random()*10)+"s";
+  d.style.opacity=Math.random();
+  document.body.appendChild(d);
+}
+</script>
+
+<div class="top-brand">LaxNar Studio</div>
+
+<div class="blog-socials">
+  <a href="https://in.pinterest.com/laxnarstudio/">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/">Instagram</a>
+  <a href="https://www.threads.net/@laxnarstudio">Threads</a>
+</div>
+
+<div class="blog-post">
+
+<h1>My Digital Product Journey</h1>
+
+<p class="intro">
+A personal story of starting LaxNar Studio and slowly figuring things out step by step.
+</p>
+
+<h2>The idea that kept coming back</h2>
+<p>
+I did not really have a perfect plan when I started this.
+I just knew I wanted to build something of my own online, something that felt meaningful to me, even if I did not fully understand how it would work yet.
+
+There was this idea that kept sitting in my mind for a long time. The idea of creating something online, building digital products, and having my own creative space kept coming back no matter how many times I ignored it.
+</p>
+
+<h2>Learning before creating</h2>
+<p>
+At first, I spent more time learning than actually doing anything. I watched, read, researched, and tried to understand how people even start digital products.
+
+The more I learned, the more confused I felt at times, but I also started realizing something important. Nobody really starts knowing everything. They just start and figure it out while moving.
+</p>
+
+<h2>The fear of not being ready</h2>
+<p>
+I used to feel like I needed more skills before I could begin. 
+
+But at some point I realized that waiting to feel ready was just another way of not starting at all.
+</p>
+
+<h2>When it finally became real</h2>
+<p>
+Things started changing when I stopped treating this like something I would do later and started treating it like something I am already doing.
+
+Even small actions like creating a page, writing posts, or setting up ideas made everything feel real.
+</p>
+
+<h2>What I am learning now</h2>
+<p>
+Right now I am still learning everything. I am still figuring out my style, my products, and what I actually want to create long term.
+
+It is not fully clear yet, and that is okay because clarity is something I am building through action.
+</p>
+
+<h2>A lesson about small steps</h2>
+<p>
+One thing I did not understand before is how small progress actually looks. It is not always exciting. Most of the time it feels slow and invisible.
+
+But those small actions are the reason anything exists at all.
+</p>
+
+<div class="quote">
+I stopped waiting for the perfect beginning and started building with what I had.
+</div>
+
+<p>
+I don’t know exactly how everything is going to turn out for me, but I know I am not going to give up just because I feel behind sometimes, and maybe you don’t need to give up either, even if things feel unclear right now.
+</p>
+
+<p>
+I don’t know who you are, but if you are reading this, I just want to say you can do it. I hope things get better for you, and I wish you good luck on your journey.
+</p>
+
+<div class="cta">
+<h2>From LaxNar Studio</h2>
+<p>
+A small creative space where I share my journey of building digital products and learning along the way.
+</p>
+
+<p>
+If you want to explore what I am creating, you can check my shop below.
+</p>
+
+<a href="https://laxnarstudio.gumroad.com/">Visit Shop</a>
+</div>
+
+<div style="text-align:center; margin-top:35px;">
+  <a href="index.html" class="back-home-bottom">← Return to Homepage</a>
+</div>
+
+</div>
+
+<script>
+const elements=document.querySelectorAll("h2,p,.quote,.cta");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.15});
+
+elements.forEach(el=>{
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
