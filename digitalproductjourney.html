@@ -39,13 +39,11 @@ body{
 
 /* 🌿 brand */
 .top-brand{
-  position:fixed;
-  top:18px;
-  left:22px;
+  text-align:center;
+  padding-top:20px;
   font-family:"Brush Script MT", cursive;
-  font-size:28px;
+  font-size:34px;
   color:#5f7f63;
-  z-index:999;
 }
 
 /* 🌿 layout */
@@ -134,6 +132,53 @@ p{
   transform: translateY(0);
 }
 
+/* ADD THIS RIGHT HERE */
+.back-home-bottom{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 22px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.back-home-bottom:hover{
+  background:#4f6b52;
+}
+
+  /* 🌿 blog social links */
+
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:70px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.blog-socials a{
+  text-decoration:none;
+  color:#5f7f63;
+  font-size:13px;
+  padding:8px 14px;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(8px);
+  border-radius:999px;
+  transition:0.3s;
+}
+
 </style>
 
 </head>
@@ -152,6 +197,12 @@ for(let i=0;i<20;i++){
 </script>
 
 <div class="top-brand">LaxNar Studio</div>
+
+<div class="blog-socials">
+  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
+  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+</div>
 
 <div class="blog-post">
 
@@ -239,7 +290,12 @@ If you would like to explore what I am building, you can visit my shop here.
 <a href="https://laxnarstudio.gumroad.com/" target="_blank">
 Visit Shop
 </a>
+</div>
 
+<div style="text-align:center; margin-top:35px;">
+  <a href="index.html" class="back-home-bottom">
+    ← Return to Homepage
+  </a>
 </div>
 
 </div>
