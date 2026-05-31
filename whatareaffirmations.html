@@ -47,6 +47,27 @@ body{
   z-index:999;
 }
 
+  /* 🌿 back home button */
+.back-home{
+  position:fixed;
+  top:18px;
+  right:22px;
+  padding:10px 18px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(8px);
+  color:#5f7f63;
+  text-decoration:none;
+  border-radius:999px;
+  font-size:14px;
+  z-index:999;
+  transition:0.3s;
+}
+
+.back-home:hover{
+  background:white;
+  transform:translateY(-2px);
+}
+  
 /* 🌿 layout */
 .blog-post{
   max-width:800px;
@@ -133,6 +154,49 @@ p{
   transform: translateY(0);
 }
 
+/* ADD THIS RIGHT HERE */
+.back-home-bottom{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 22px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.back-home-bottom:hover{
+  background:#4f6b52;
+}
+
+  /* 🌿 blog social links */
+
+.blog-socials{
+  position:fixed;
+  top:20px;
+  right:22px;
+  display:flex;
+  gap:10px;
+  z-index:999;
+}
+
+.blog-socials a{
+  text-decoration:none;
+  color:#5f7f63;
+  font-size:13px;
+  padding:8px 12px;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(8px);
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.blog-socials a:hover{
+  background:white;
+  transform:translateY(-2px);
+}
+  
 </style>
 </head>
 
@@ -152,6 +216,16 @@ for(let i=0;i<20;i++){
 
 <div class="top-brand">LaxNar Studio</div>
 
+  <div class="blog-socials">
+  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
+  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+</div>
+  
+  <a href="index.html" class="back-home">
+  ← Home
+</a>
+  
 <div class="blog-post">
 
 <h1>Affirmations: What They Are and How They Actually Work</h1>
@@ -239,6 +313,12 @@ Simple reminders for moments when your mind feels heavy or unclear.
 <a href="https://laxnarstudio.gumroad.com/l/awxtij" target="_blank">
 Get the Cards
 </a>
+</div>
+
+<div style="text-align:center; margin-top:35px;">
+  <a href="index.html" class="back-home-bottom">
+    ← Return to Homepage
+  </a>
 </div>
 
 </div>
