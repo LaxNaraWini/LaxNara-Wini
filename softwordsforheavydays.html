@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaxNar Studio — Soft Words for Heavy Days</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌿 BASE THEME */
+body{
+  margin:0;
+  font-family:Poppins;
+  background: linear-gradient(180deg, #f6f1e7, #e9efe6, #f3f0e8);
+  color:#2f2f2f;
+  overflow-x:hidden;
+}
+
+/* 🌿 floating particles */
+.floater{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:#a9bfa3;
+  border-radius:50%;
+  opacity:0.4;
+  animation: floatUp 14s linear infinite;
+  z-index:0;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(100vh); opacity:0;}
+  20%{opacity:0.6;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* 🌿 brand */
+.top-brand{
+  position:fixed;
+  top:18px;
+  left:22px;
+  font-family:"Brush Script MT", cursive;
+  font-size:28px;
+  color:#5f7f63;
+  z-index:999;
+}
+
+/* 🌿 layout */
+.blog-post{
+  max-width:800px;
+  margin:90px auto;
+  padding:25px;
+}
+
+/* 🌿 title */
+h1{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  color:#4f6b52;
+  font-size:42px;
+}
+
+.intro{
+  text-align:center;
+  color:#5f5f5f;
+  margin-bottom:40px;
+}
+
+/* 🌿 headings */
+h2{
+  margin-top:30px;
+  color:#5f7f63;
+  font-family:'Playfair Display', serif;
+}
+
+/* 🌿 text */
+p{
+  line-height:1.9;
+  font-size:16px;
+  color:#3f3f3f;
+}
+
+/* 🌿 quote */
+.quote{
+  margin-top:40px;
+  padding:25px;
+  text-align:center;
+  font-style:italic;
+  color:#4f6b52;
+  border-left:2px solid #a9bfa3;
+  border-right:2px solid #a9bfa3;
+  background: rgba(255,255,255,0.4);
+  border-radius:12px;
+}
+
+/* 🌿 CTA section */
+.cta{
+  margin-top:60px;
+  padding:25px;
+  border-radius:16px;
+  background: rgba(255,255,255,0.5);
+  border:1px solid rgba(120,140,120,0.2);
+  text-align:center;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 18px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.cta a:hover{
+  transform:scale(1.05);
+  background:#4f6b52;
+}
+
+/* 🌿 fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<20;i++){
+  let d=document.createElement("div");
+  d.className="floater";
+  d.style.left=Math.random()*100+"vw";
+  d.style.animationDuration=(10+Math.random()*10)+"s";
+  d.style.opacity=Math.random();
+  document.body.appendChild(d);
+}
+</script>
+
+<div class="top-brand">LaxNar Studio</div>
+
+<div class="blog-post">
+
+<h1>Soft Words for Heavy Days</h1>
+
+<p class="intro">
+A gentle space for the days when everything feels a little too much, and you just need something soft to hold onto for a while.
+</p>
+
+<h2>When everything feels heavier than usual</h2>
+<p>
+There are days when life does not fall apart in obvious ways, but still feels heavy in your chest. Nothing dramatic needs to happen for you to feel tired. Sometimes it is just the buildup of thoughts, pressure, expectations, and emotions that slowly collect until even simple things feel difficult.
+</p>
+
+<p>
+If you are here on a day like that, you do not need to fix anything right now. You do not need to push yourself into clarity or productivity. You are allowed to exist without explaining yourself.
+</p>
+
+<h2>When your mind feels full but nothing is wrong</h2>
+<p>
+There is a certain kind of tiredness that does not come from doing too much, but from thinking too much. Your mind keeps moving even when your body wants to pause. You think about what you should be doing, what you have not done, what might happen later, and somehow even rest starts to feel like something you have to earn.
+</p>
+
+<p>
+But not every thought needs action. Not every feeling needs resolution. Sometimes your mind is simply asking for quiet, not answers.
+</p>
+
+<h2>Soft reminders for days like this</h2>
+<p>
+You are allowed to slow down without guilt. You are not falling behind in life just because today feels different from your usual pace. You are not required to be productive to deserve rest or kindness. What you are feeling is real, even if it does not fully make sense yet.
+</p>
+
+<p>
+And even if it feels like this moment will last forever, it will not. Heavy days change shape eventually, even if they do not feel like it in the moment.
+</p>
+
+<h2>When everything feels overwhelming</h2>
+<p>
+Instead of trying to fix everything at once, it can help to return to something small and simple. Sit somewhere comfortable. Notice your breath without trying to control it. Drink water slowly. Let yourself pause.
+</p>
+
+<p>
+These small moments are not meaningless. They are often what help you come back to yourself when everything feels scattered.
+</p>
+
+<h2>A gentle truth</h2>
+<p>
+You are not lazy for feeling tired. You are not weak for needing rest. You are not behind in life because you are moving through a slower moment.
+</p>
+
+<p>
+You are simply human, and being human means some days will feel heavier than others without any clear reason.
+</p>
+
+<div class="quote">
+You do not have to be strong all the time. You just have to stay with yourself gently.
+</div>
+
+<div class="cta">
+<h2>From LaxNar Studio</h2>
+<p>
+I created a free ebook as part of LaxNar Studio to help you get started with soft, mindful digital creation and gentle self-growth practices. This is something I wish I had when I started, and I’m sharing it freely for anyone who needs it right now.
+</p>
+
+<a href="https://laxnarstudio.gumroad.com/l/drnwgd" target="_blank">
+Get Your Free Ebook
+</a>
+</div>
+
+</div>
+
+<script>
+const elements=document.querySelectorAll("h2,p,.quote,.cta");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.15});
+
+elements.forEach(el=>{
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
