@@ -159,7 +159,7 @@ footer{
   z-index:2;
 }
 
-/* 🌿 FLOATING SOCIAL BAR (RIGHT SIDE) */
+/* 🌿 SOCIAL BAR */
 .social-bar{
   position:fixed;
   top:50%;
@@ -172,7 +172,6 @@ footer{
   transition:0.4s ease;
 }
 
-/* links */
 .social-bar a{
   font-size:12px;
   text-decoration:none;
@@ -187,7 +186,6 @@ footer{
   transition:0.3s ease;
 }
 
-/* animated underline */
 .social-bar a::after{
   content:"";
   position:absolute;
@@ -208,7 +206,6 @@ footer{
   transform:translateX(-4px);
 }
 
-/* active highlight */
 .social-bar a.active{
   background:white;
   opacity:1;
@@ -220,13 +217,11 @@ footer{
 
 <body>
 
-<!-- 🌿 DOODLES -->
 <div class="doodle d1">✿</div>
 <div class="doodle d2">☁</div>
 <div class="doodle d3">❀</div>
 <div class="doodle d4">✧</div>
 
-<!-- 🌿 FLOATING SOCIAL BAR -->
 <div class="social-bar">
   <a href="https://in.pinterest.com/laxnarstudio/" target="_blank" class="active">Pinterest</a>
   <a href="https://www.instagram.com/laxnarstudio/?hl=en" target="_blank">Instagram</a>
@@ -256,15 +251,13 @@ footer{
     <a href="whatareaffirmations.html">Read Blog →</a>
   </div>
 
-  <div class="blog-card">
-  <h3>Soft Words for Heavy Days</h3>
-  <p>A gentle blog for slow, heavy emotional days.</p>
+  <!-- FIXED BLOG CARD -->
+  <div class="card">
+    <h3>Soft Words for Heavy Days</h3>
+    <p>A gentle space for the days when everything feels a little too much and you need something soft to hold onto.</p>
+    <a href="softwordsforheavydays.html">Read Blog →</a>
+  </div>
 
-  <a href="softwordsforheavydays.html" class="btn">
-    Read Blog
-  </a>
-</div>
-  
 </div>
 
 </div>
