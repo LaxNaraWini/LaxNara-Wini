@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaxNar Studio — The Child's Language</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌿 BASE THEME */
+body{
+  margin:0;
+  font-family:Poppins;
+  background: linear-gradient(180deg, #f6f1e7, #e9efe6, #f3f0e8);
+  color:#2f2f2f;
+  overflow-x:hidden;
+}
+
+/* 🌿 floating particles */
+.floater{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:#a9bfa3;
+  border-radius:50%;
+  opacity:0.4;
+  animation: floatUp 14s linear infinite;
+  z-index:0;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(100vh); opacity:0;}
+  20%{opacity:0.6;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* 🌿 brand */
+.top-brand{
+  text-align:center;
+  padding-top:20px;
+  font-family:"Brush Script MT", cursive;
+  font-size:34px;
+  color:#5f7f63;
+}
+
+/* 🌿 layout */
+.blog-post{
+  max-width:800px;
+  margin:90px auto;
+  padding:25px;
+}
+
+/* 🌿 title */
+h1{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  color:#4f6b52;
+  font-size:42px;
+}
+
+.intro{
+  text-align:center;
+  color:#5f5f5f;
+  margin-bottom:40px;
+}
+
+/* 🌿 headings */
+h2{
+  margin-top:30px;
+  color:#5f7f63;
+  font-family:'Playfair Display', serif;
+}
+
+/* 🌿 text */
+p{
+  line-height:1.9;
+  font-size:16px;
+  color:#3f3f3f;
+}
+
+/* 🌿 quote */
+.quote{
+  margin-top:40px;
+  padding:25px;
+  text-align:center;
+  font-style:italic;
+  color:#4f6b52;
+  border-left:2px solid #a9bfa3;
+  border-right:2px solid #a9bfa3;
+  background: rgba(255,255,255,0.4);
+  border-radius:12px;
+}
+
+/* 🌿 CTA section */
+.cta{
+  margin-top:60px;
+  padding:25px;
+  border-radius:16px;
+  background: rgba(255,255,255,0.5);
+  border:1px solid rgba(120,140,120,0.2);
+  text-align:center;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 18px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.cta a:hover{
+  transform:scale(1.05);
+  background:#4f6b52;
+}
+
+/* 🌿 fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ADD THIS RIGHT HERE */
+.back-home-bottom{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 22px;
+  background:#5f7f63;
+  color:white;
+  text-decoration:none;
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.back-home-bottom:hover{
+  background:#4f6b52;
+}
+
+  /* 🌿 blog social links */
+
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.blog-socials{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:70px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+}
+
+.blog-socials a{
+  text-decoration:none;
+  color:#5f7f63;
+  font-size:13px;
+  padding:8px 14px;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(8px);
+  border-radius:999px;
+  transition:0.3s;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<20;i++){
+  let d=document.createElement("div");
+  d.className="floater";
+  d.style.left=Math.random()*100+"vw";
+  d.style.animationDuration=(10+Math.random()*10)+"s";
+  d.style.opacity=Math.random();
+  document.body.appendChild(d);
+}
+</script>
+
+<div class="top-brand">LaxNar Studio</div>
+
+<div class="blog-socials">
+  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
+  <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
+  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+</div>
+
+<div class="blog-post">
+
+<h1>The Child’s Language</h1>
+
+<p class="intro">
+A reflection on how we once saw the world with curiosity, and how slowly we stopped asking the same simple questions we once lived inside of.
+</p>
+
+<h2>How everything used to feel alive</h2>
+
+<p>
+There was a time when everything felt new without trying. The smallest things used to feel interesting for no reason at all. A shadow on the wall, the way light moved across a room, the sound of something falling, all of it felt like it deserved attention.
+</p>
+
+<p>
+We did not need a reason to notice things back then. We just did. There was no effort in it. Curiosity was not something we practiced, it was just how we existed.
+</p>
+
+<h2>When curiosity slowly starts disappearing</h2>
+
+<p>
+At some point, without really realizing it, we start replacing curiosity with recognition. We stop asking simple questions because we assume we already know enough. We see things and move on faster than we process them.
+</p>
+
+<p>
+The world does not change, but our attention does. We begin to label everything instead of experiencing it. We look at things through what we already know rather than what is actually in front of us.
+</p>
+
+<h2>The difference between seeing and remembering</h2>
+
+<p>
+A child sees the world directly. There is no filter, no rush to understand, no pressure to make meaning out of everything immediately.
+</p>
+
+<p>
+But as we grow, we start living more in memory than in observation. We stop meeting things as they are and start meeting them as we think they are. Even new experiences start feeling slightly familiar before they have fully happened.
+</p>
+
+<h2>The quiet loss we do not notice</h2>
+
+<p>
+We rarely notice the exact moment curiosity fades. It does not disappear suddenly. It just gets replaced slowly by habit, by routine, by the feeling that we already know how things work.
+</p>
+
+<p>
+And because life continues functioning normally, we do not question it. Everything still works, everything still moves forward, but something quieter underneath feels slightly less open than it used to.
+</p>
+
+<h2>What children still do differently</h2>
+
+<p>
+Children do not move through the world trying to optimize it or categorize it. They stay longer with things. They ask questions without needing answers that are useful or efficient. They can look at the same thing again and again and still find something new in it.
+</p>
+
+<p>
+That is not because the world is different for them. It is because they have not yet learned to stop noticing.
+</p>
+
+<h2>Learning to return to that way of seeing</h2>
+
+<p>
+The goal is not to become a child again. It is to remember what it feels like to stay present with things without rushing past them. To allow curiosity to exist again without immediately turning everything into something already understood.
+</p>
+
+<p>
+Because the moment you start noticing how often you are not noticing, something slowly begins to shift. Not everything becomes new again, but your relationship with everything becomes more awake.
+</p>
+
+<div class="quote">
+We did not lose curiosity. We just stopped using it.
+</div>
+
+<div class="cta">
+<h2>From LaxNar Studio</h2>
+
+<p>
+This reflection is part of my ebook <strong>The Child’s Language</strong>, a collection of writings about curiosity, perception, and how we slowly move away from the way we once saw the world.
+</p>
+
+<p>
+If this resonated with you, you can explore the full ebook below.
+</p>
+
+<a href="https://laxnarstudio.gumroad.com/" target="_blank">
+Get ebook
+</a>
+</div>
+
+<div style="text-align:center; margin-top:35px;">
+  <a href="index.html" class="back-home-bottom">
+    ← Return to Homepage
+  </a>
+</div>
+
+</div>
+
+<script>
+const elements=document.querySelectorAll("h2,p,.quote,.cta");
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.15});
+
+elements.forEach(el=>{
+  el.classList.add("fade-in");
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
