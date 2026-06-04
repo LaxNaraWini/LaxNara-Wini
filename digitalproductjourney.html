@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,97 +9,79 @@
 
 <style>
 
-/* 🌿 BASE THEME */
+/* 🌸 BASE THEME (CLEAN BABY PINK) */
 body{
   margin:0;
   font-family:Poppins;
-  background: linear-gradient(180deg, #f6f1e7, #e9efe6, #f3f0e8);
-  color:#2f2f2f;
+  background: linear-gradient(180deg, #fff1f6, #ffe4ec, #fff6fa);
+  color:#3a2f33;
   overflow-x:hidden;
 }
 
-/* 🌿 floating particles */
-.floater{
-  position:fixed;
-  width:8px;
-  height:8px;
-  background:#a9bfa3;
-  border-radius:50%;
-  opacity:0.4;
-  animation: floatUp 14s linear infinite;
-  z-index:0;
-}
-
-@keyframes floatUp{
-  0%{transform:translateY(100vh); opacity:0;}
-  20%{opacity:0.6;}
-  100%{transform:translateY(-10vh); opacity:0;}
-}
-
-/* 🌿 brand */
+/* 🌸 brand */
 .top-brand{
   text-align:center;
   padding-top:20px;
   font-family:"Brush Script MT", cursive;
   font-size:34px;
-  color:#5f7f63;
+  color:#d46b8c;
 }
 
-/* 🌿 layout */
+/* 🌸 layout */
 .blog-post{
   max-width:800px;
   margin:90px auto;
   padding:25px;
 }
 
-/* 🌿 title */
+/* 🌸 title */
 h1{
   text-align:center;
   font-family:'Playfair Display', serif;
-  color:#4f6b52;
+  color:#c85c86;
   font-size:42px;
 }
 
 .intro{
   text-align:center;
-  color:#5f5f5f;
+  color:#6a5a60;
   margin-bottom:40px;
 }
 
-/* 🌿 headings */
+/* 🌸 headings */
 h2{
   margin-top:30px;
-  color:#5f7f63;
+  color:#d46b8c;
   font-family:'Playfair Display', serif;
 }
 
-/* 🌿 text */
+/* 🌸 text */
 p{
   line-height:1.9;
   font-size:16px;
-  color:#3f3f3f;
+  color:#4a3a40;
 }
 
-/* 🌿 quote */
+/* 🌸 quote */
 .quote{
   margin-top:40px;
   padding:25px;
   text-align:center;
   font-style:italic;
-  color:#4f6b52;
-  border-left:2px solid #a9bfa3;
-  border-right:2px solid #a9bfa3;
-  background: rgba(255,255,255,0.4);
+  color:#c85c86;
+  border-left:2px solid #f7a8c4;
+  border-right:2px solid #f7a8c4;
+  background: rgba(255,255,255,0.6);
   border-radius:12px;
 }
 
-/* 🌿 CTA section */
+/* 🌸 CTA section */
 .cta{
   margin-top:60px;
   padding:25px;
   border-radius:16px;
-  background: rgba(255,255,255,0.5);
-  border:1px solid rgba(120,140,120,0.2);
+  background: rgba(255,255,255,0.65);
+  border:1px solid rgba(247,168,196,0.35);
   text-align:center;
 }
 
@@ -108,7 +89,7 @@ p{
   display:inline-block;
   margin-top:12px;
   padding:10px 18px;
-  background:#5f7f63;
+  background:#d46b8c;
   color:white;
   text-decoration:none;
   border-radius:20px;
@@ -117,27 +98,15 @@ p{
 
 .cta a:hover{
   transform:scale(1.05);
-  background:#4f6b52;
+  background:#c85c86;
 }
 
-/* 🌿 fade animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ADD THIS RIGHT HERE */
+/* 🌸 back button */
 .back-home-bottom{
   display:inline-block;
   margin-top:10px;
   padding:12px 22px;
-  background:#5f7f63;
+  background:#d46b8c;
   color:white;
   text-decoration:none;
   border-radius:999px;
@@ -145,20 +114,10 @@ p{
 }
 
 .back-home-bottom:hover{
-  background:#4f6b52;
+  background:#c85c86;
 }
 
-  /* 🌿 blog social links */
-
-.blog-socials{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:15px;
-  margin-bottom:30px;
-  flex-wrap:wrap;
-}
-
+/* 🌸 social links */
 .blog-socials{
   display:flex;
   justify-content:center;
@@ -170,13 +129,24 @@ p{
 
 .blog-socials a{
   text-decoration:none;
-  color:#5f7f63;
+  color:#c85c86;
   font-size:13px;
   padding:8px 14px;
-  background:rgba(255,255,255,0.75);
-  backdrop-filter:blur(8px);
+  background:rgba(255,255,255,0.85);
   border-radius:999px;
   transition:0.3s;
+}
+
+/* 🌸 fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 </style>
@@ -184,17 +154,6 @@ p{
 </head>
 
 <body>
-
-<script>
-for(let i=0;i<20;i++){
-  let d=document.createElement("div");
-  d.className="floater";
-  d.style.left=Math.random()*100+"vw";
-  d.style.animationDuration=(10+Math.random()*10)+"s";
-  d.style.opacity=Math.random();
-  document.body.appendChild(d);
-}
-</script>
 
 <div class="top-brand">LaxNar Studio</div>
 
@@ -213,64 +172,22 @@ A beginner's story of creating LaxNar Studio and learning how to build something
 </p>
 
 <h2>The idea that kept coming back</h2>
-
-<p>
-When people talk about digital products, it often sounds like they woke up one day with the perfect idea, created something amazing, and immediately started making sales. As someone who is just beginning this journey, I can tell you that my experience looks nothing like that.
-</p>
-
-<p>
-The truth is, I started with curiosity, a lot of questions, and absolutely no clear roadmap. LaxNar Studio did not begin as a carefully planned business. It started as an idea that kept returning to me. The idea of creating something online that felt meaningful, creative, and genuinely helpful was something I could not stop thinking about.
-</p>
+<p>When people talk about digital products, it often sounds like they woke up one day with the perfect idea...</p>
 
 <h2>Learning before creating</h2>
-
-<p>
-At the beginning, I spent more time learning than creating. I researched what digital products actually were, how creators sold them, what platforms they used, and why people chose certain products over others.
-</p>
-
-<p>
-The more I learned, the more I realized how much there was to discover. Instead of feeling discouraged, I found myself becoming more interested. Every new thing I learned felt like another piece of a puzzle slowly coming together.
-</p>
+<p>At the beginning, I spent more time learning than creating...</p>
 
 <h2>The fear of not being ready</h2>
-
-<p>
-One thing I noticed very quickly was how easy it is to convince yourself that you are not ready. There is always another course to watch, another skill to learn, another reason to wait a little longer before starting.
-</p>
-
-<p>
-For a while, I thought I needed more knowledge, more experience, and a better plan before I could begin. Eventually I realized that if I kept waiting until I felt completely ready, I would probably never start at all.
-</p>
+<p>One thing I noticed very quickly was how easy it is to convince yourself that you are not ready...</p>
 
 <h2>When it finally became real</h2>
-
-<p>
-The moment things started changing was when I stopped treating my journey as something that would begin someday in the future and started treating it as something that was already happening.
-</p>
-
-<p>
-Creating a website, publishing blog posts, setting up Pinterest, and exploring product ideas might seem like small actions, but together they made the dream feel real. For the first time, I was not just thinking about building something. I was actually building it.
-</p>
+<p>The moment things started changing was when I stopped treating my journey as something in the future...</p>
 
 <h2>What I am learning now</h2>
-
-<p>
-Right now, I am still at the beginning. I am experimenting with ideas, discovering what I enjoy creating, and figuring out what kind of digital products fit the vision I have for LaxNar Studio.
-</p>
-
-<p>
-There are still things I do not know. There are still mistakes I will probably make. But that no longer feels like a reason to stop. If anything, it feels like proof that I am moving forward.
-</p>
+<p>Right now, I am still at the beginning...</p>
 
 <h2>A lesson about small steps</h2>
-
-<p>
-One of the most valuable things this journey has taught me is that progress often looks much smaller than we expect. It is easy to compare your beginning to someone else's years of experience and feel like you are behind.
-</p>
-
-<p>
-But every creator once had a first product, a first website, a first blog post, and a first day of not knowing what they were doing. Nobody starts as an expert.
-</p>
+<p>One of the most valuable things this journey has taught me is that progress often looks much smaller...</p>
 
 <div class="quote">
 I stopped waiting for the perfect beginning and started building with what I had.
@@ -280,11 +197,7 @@ I stopped waiting for the perfect beginning and started building with what I had
 <h2>From LaxNar Studio</h2>
 
 <p>
-LaxNar Studio is a growing space where I share my creative journey, digital projects, and thoughtful resources designed to inspire a slower and more intentional approach to creating online.
-</p>
-
-<p>
-If you would like to explore what I am building, you can visit my shop here.
+A growing space where I share my creative journey and digital products.
 </p>
 
 <a href="https://laxnarstudio.gumroad.com/" target="_blank">
