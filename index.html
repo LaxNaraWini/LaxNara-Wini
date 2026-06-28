@@ -1,2497 +1,685 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>LaxNara Wini | Manifest Your Dream Life</title>
-
-<meta name="description" content="A space for manifestation, abundance, healing, mindset and becoming your highest self.">
-
+<meta name="description" content="A space for manifestation, abundance, healing, mindset and becoming your highest self."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="icon" href="favicon.png">
-
- <style>
-
-   /* ==========================
-   LAXNARA WINI
-   PINK PARADISE THEME
-========================== */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+:root{
+  --pink:#F1AFC6;
+  --pink-dark:#D47A9C;
+  --pink-light:#FFE7F1;
+  --text:#66535D;
+  --text-dark:#3D2B35;
+  --glass:rgba(255,255,255,0.6);
+  --glass-border:rgba(255,255,255,0.8);
 }
 
-html{
-scroll-behavior:smooth;
+/* CURSOR */
+.cursor{
+  position:fixed;
+  width:12px;height:12px;
+  background:var(--pink-dark);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:99999;
+  transition:transform 0.1s ease;
+  mix-blend-mode:multiply;
+}
+.cursor-glow{
+  position:fixed;
+  width:40px;height:40px;
+  border:1.5px solid rgba(212,122,156,0.4);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:99998;
+  transition:all 0.15s ease;
+}
+.cursor-particle{
+  position:fixed;
+  width:6px;height:6px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:99997;
+  opacity:0;
+  animation:particleFade 0.6s ease forwards;
+}
+@keyframes particleFade{
+  0%{opacity:0.8;transform:scale(1);}
+  100%{opacity:0;transform:scale(0);}
 }
 
+/* BACKGROUND */
 body{
-
-font-family:'Poppins',sans-serif;
-
-background:
-radial-gradient(circle at top left,#FFE7F1 0%,transparent 30%),
-radial-gradient(circle at top right,#FFEAF5 0%,transparent 30%),
-radial-gradient(circle at bottom left,#FFDDEB 0%,transparent 35%),
-linear-gradient(180deg,#FFF9FC,#FFF5F8,#FFF9FC);
-
-color:#66535D;
-
-overflow-x:hidden;
-
-position:relative;
-
-min-height:100vh;
-
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#FFF9FC,#FFF5F8,#FFF9FC);
+  color:var(--text);
+  overflow-x:hidden;
+  cursor:none;
 }
+.background{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-100;overflow:hidden;}
+.blob{position:absolute;border-radius:50%;filter:blur(140px);opacity:.4;animation:floatBlob 18s ease-in-out infinite alternate;}
+.blob1{width:450px;height:450px;background:#FFD5E5;top:-150px;left:-150px;}
+.blob2{width:420px;height:420px;background:#FFE7F2;top:20%;right:-120px;animation-duration:14s;}
+.blob3{width:350px;height:350px;background:#FFD9EA;bottom:-120px;left:20%;animation-duration:12s;}
+.blob4{width:300px;height:300px;background:#FFF0F6;bottom:50px;right:10%;animation-duration:16s;}
+@keyframes floatBlob{0%{transform:translateY(0) scale(1);}100%{transform:translateY(-40px) scale(1.08);}}
 
-/* dreamy background */
+/* SPARKLES */
+.sparkles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.sparkle{position:absolute;width:3px;height:3px;background:rgba(241,175,198,0.7);border-radius:50%;animation:twinkle 3s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.1;transform:scale(0.5);}50%{opacity:1;transform:scale(1.5);}}
 
-.background{
-
-position:fixed;
-
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-z-index:-100;
-
-overflow:hidden;
-
-}
-
-/* blobs */
-
-.blob{
-
-position:absolute;
-
-border-radius:50%;
-
-filter:blur(140px);
-
-opacity:.45;
-
-animation:floatBlob 18s ease-in-out infinite alternate;
-
-}
-
-.blob1{
-
-width:450px;
-height:450px;
-
-background:#FFD5E5;
-
-top:-150px;
-left:-150px;
-
-}
-
-.blob2{
-
-width:420px;
-height:420px;
-
-background:#FFE7F2;
-
-top:20%;
-right:-120px;
-
-}
-
-.blob3{
-
-width:350px;
-height:350px;
-
-background:#FFD9EA;
-
-bottom:-120px;
-left:20%;
-
-}
-
-.blob4{
-
-width:300px;
-height:300px;
-
-background:#FFF0F6;
-
-bottom:50px;
-right:10%;
-
-}
-
-@keyframes floatBlob{
-
-0%{
-
-transform:translateY(0) scale(1);
-
-}
-
-100%{
-
-transform:translateY(-40px) scale(1.08);
-
-}
-
-}
-/* ======================
-NAVIGATION
-====================== */
-
+/* NAVIGATION */
 nav{
-
-position:fixed;
-
-top:25px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:92%;
-
-max-width:1200px;
-
-padding:18px 35px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:rgba(255,255,255,.55);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.65);
-
-border-radius:100px;
-
-box-shadow:0 15px 40px rgba(255,190,210,.18);
-
-z-index:999;
-
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  width:92%;max-width:1200px;
+  padding:16px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius:100px;
+  box-shadow:0 15px 40px rgba(255,190,210,0.18),0 0 0 1px rgba(255,255,255,0.5) inset;
+  z-index:999;
+  transition:all 0.4s ease;
 }
-
-.nav-logo{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:34px;
-
-color:#D47A9C;
-
-font-weight:600;
-
+nav.scrolled{
+  background:rgba(255,255,255,0.75);
+  box-shadow:0 20px 50px rgba(255,190,210,0.25);
 }
-
-nav ul{
-
-display:flex;
-
-gap:28px;
-
-list-style:none;
-
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--pink-dark);font-weight:600;letter-spacing:1px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;color:#8A6876;font-weight:500;font-size:14px;transition:0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--pink-dark);transition:0.3s;}
+.nav-links a:hover{color:var(--pink-dark);}
+.nav-links a:hover::after{width:100%;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+.hamburger span{width:24px;height:2px;background:var(--pink-dark);border-radius:2px;transition:0.3s;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{
+  display:none;position:fixed;top:90px;left:50%;transform:translateX(-50%);
+  width:88%;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.8);border-radius:24px;
+  padding:24px;z-index:998;
+  box-shadow:0 20px 50px rgba(255,185,210,0.2);
 }
+.mobile-menu.open{display:block;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:16px;}
+.mobile-menu a{text-decoration:none;color:#8A6876;font-weight:500;font-size:16px;display:block;padding:8px 0;}
 
-nav a{
-
-text-decoration:none;
-
-color:#8A6876;
-
-font-weight:500;
-
-transition:.35s;
-
-}
-
-nav a:hover{
-
-color:#D47A9C;
-
-}
-
-/* ======================
-   HERO SECTION
-====================== */
-
+/* HERO */
 .hero{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:160px 20px 120px;
-
-position:relative;
-
-overflow:hidden;
-
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  text-align:center;padding:160px 20px 120px;position:relative;overflow:hidden;
 }
-
-.hero-content{
-
-max-width:850px;
-
-position:relative;
-
-z-index:5;
-
-animation:fadeUp 1.5s ease;
-
+.hero-content{max-width:850px;position:relative;z-index:5;}
+.hero-badge{
+  display:inline-block;padding:8px 20px;border-radius:999px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.8);
+  font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--pink-dark);margin-bottom:30px;
+  animation:fadeUp 1s ease;
 }
-
 .hero h1{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:92px;
-
-font-weight:600;
-
-letter-spacing:2px;
-
-color:#CF7E9D;
-
-line-height:1.1;
-
-margin-bottom:15px;
-
-text-shadow:0 10px 30px rgba(255,180,205,.18);
-
+  font-family:'Cormorant Garamond',serif;
+  font-size:88px;font-weight:600;letter-spacing:2px;
+  color:var(--pink-dark);line-height:1.05;margin-bottom:12px;
+  animation:fadeUp 1.2s ease;
 }
-
 .hero h2{
-
-font-family:'Great Vibes',cursive;
-
-font-size:44px;
-
-font-weight:400;
-
-color:#E09AB7;
-
-margin-bottom:35px;
-
+  font-family:'Great Vibes',cursive;font-size:42px;font-weight:400;
+  color:#E09AB7;margin-bottom:30px;animation:fadeUp 1.4s ease;
 }
-
 .hero p{
-
-max-width:700px;
-
-margin:auto;
-
-font-size:18px;
-
-line-height:2;
-
-color:#6E5A65;
-
-margin-bottom:45px;
-
+  max-width:680px;margin:0 auto 40px;font-size:17px;line-height:2;
+  color:#6E5A65;animation:fadeUp 1.6s ease;
 }
-
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-margin-bottom:45px;
-
-}
-
+.hero-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;animation:fadeUp 1.8s ease;}
 .primary-btn{
-
-padding:18px 42px;
-
-border-radius:999px;
-
-background:linear-gradient(135deg,#F8C7D9,#F1AFC6);
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-box-shadow:0 20px 45px rgba(241,175,198,.35);
-
-transition:.45s;
-
+  padding:16px 40px;border-radius:999px;
+  background:linear-gradient(135deg,#F8C7D9,#F1AFC6);
+  color:white;text-decoration:none;font-weight:600;font-size:14px;
+  box-shadow:0 20px 45px rgba(241,175,198,0.35);transition:0.45s;
 }
-
-.primary-btn:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 35px 60px rgba(241,175,198,.45);
-
-}
-
+.primary-btn:hover{transform:translateY(-5px);box-shadow:0 35px 60px rgba(241,175,198,0.45);}
 .secondary-btn{
+  padding:16px 40px;border-radius:999px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.8);
+  text-decoration:none;color:var(--pink-dark);font-weight:600;font-size:14px;
+  transition:0.45s;box-shadow:0 15px 35px rgba(255,210,225,0.25);
+}
+.secondary-btn:hover{transform:translateY(-5px);background:#fff;}
+.hero-socials{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:16px;animation:fadeUp 2s ease;}
+.hero-socials a{
+  text-decoration:none;padding:10px 22px;border-radius:999px;
+  background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.7);color:var(--pink-dark);
+  font-weight:600;font-size:13px;transition:0.4s;
+  box-shadow:0 10px 25px rgba(255,190,210,0.15);
+}
+.hero-socials a:hover{background:#F8C7D9;color:white;transform:translateY(-4px);}
 
-padding:18px 42px;
+/* SVG CHERRY BLOSSOMS */
+.cherry-canvas{position:absolute;inset:0;pointer-events:none;z-index:1;}
 
-border-radius:999px;
-
-background:rgba(255,255,255,.65);
-
-backdrop-filter:blur(15px);
-
-border:1px solid rgba(255,255,255,.8);
-
-text-decoration:none;
-
-color:#C87999;
-
-font-weight:600;
-
-transition:.45s;
-
-box-shadow:0 15px 35px rgba(255,210,225,.25);
-
+/* SVG BUTTERFLIES */
+.butterfly-svg{
+  position:absolute;pointer-events:none;opacity:0.55;
+  animation:flySvg 30s linear infinite;
+}
+.butterfly-svg:nth-child(2){animation-delay:-12s;top:60%;}
+@keyframes flySvg{
+  0%{transform:translateX(-100px) translateY(0) scaleX(1);}
+  25%{transform:translateX(25vw) translateY(-40px) scaleX(-1);}
+  50%{transform:translateX(50vw) translateY(20px) scaleX(1);}
+  75%{transform:translateX(75vw) translateY(-30px) scaleX(-1);}
+  100%{transform:translateX(110vw) translateY(10px) scaleX(1);}
 }
 
-.secondary-btn:hover{
-
-transform:translateY(-6px);
-
-background:#FFF;
-
-}
-
-.socials{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:18px;
-
-margin-top:20px;
-
-}
-
-.socials a{
-
-text-decoration:none;
-
-padding:12px 24px;
-
-border-radius:999px;
-
-background:rgba(255,255,255,.55);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.7);
-
-color:#C87999;
-
-font-weight:600;
-
-transition:.4s;
-
-box-shadow:0 10px 25px rgba(255,190,210,.15);
-
-}
-
-.socials a:hover{
-
-background:#F8C7D9;
-
-color:white;
-
-transform:translateY(-5px);
-
-}
-
-.hero-flower{
-
-position:absolute;
-
-font-size:55px;
-
-opacity:.22;
-
-animation:floatFlower 8s ease-in-out infinite;
-
-}
-
-.flower-left{
-
-left:-40px;
-
-top:20px;
-
-}
-
-.flower-right{
-
-right:-40px;
-
-bottom:20px;
-
-}
-
-@keyframes floatFlower{
-
-0%{
-
-transform:translateY(0) rotate(0deg);
-
-}
-
-50%{
-
-transform:translateY(-15px) rotate(6deg);
-
-}
-
-100%{
-
-transform:translateY(0) rotate(0deg);
-
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ==========================
-   SECTION LAYOUT
-========================== */
-
-.section{
-
-width:100%;
-
-max-width:1350px;
-
-margin:auto;
-
-padding:120px 25px;
-
-position:relative;
-
-}
-
-.section-heading{
-
-text-align:center;
-
-margin-bottom:70px;
-
-}
-
-.section-heading span{
-
-display:inline-block;
-
-padding:10px 22px;
-
-border-radius:999px;
-
-background:rgba(255,255,255,.55);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.75);
-
-font-size:14px;
-
-font-weight:600;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
-color:#D082A0;
-
-margin-bottom:25px;
-
-}
-
-.section-heading h3{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:64px;
-
-font-weight:600;
-
-line-height:1.15;
-
-color:#C87496;
-
-margin-bottom:18px;
-
-}
-
-.section-heading p{
-
-max-width:720px;
-
-margin:auto;
-
-font-size:18px;
-
-line-height:2;
-
-color:#6D5A65;
-
-}
-
-/* ==========================
-   BLOG GRID
-========================== */
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-
-gap:35px;
-
-margin-top:50px;
-
-}
-
-/* ==========================
-   LUXURY CARD
-========================== */
-
-.card{
-
-position:relative;
-
-padding:38px;
-
-border-radius:34px;
-
-overflow:hidden;
-
-background:rgba(255,255,255,.62);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.8);
-
-box-shadow:
-
-0 20px 50px rgba(255,185,210,.18),
-
-0 10px 25px rgba(255,255,255,.55);
-
-transition:.6s cubic-bezier(.2,.8,.2,1);
-
-}
-
-.card:hover{
-
-transform:translateY(-14px) scale(1.02);
-
-box-shadow:
-
-0 35px 80px rgba(255,170,205,.28);
-
-}
-
-/* dreamy glow */
-
-.card::before{
-
-content:"";
-
-position:absolute;
-
-width:220px;
-
-height:220px;
-
-background:rgba(255,215,230,.45);
-
-border-radius:50%;
-
-filter:blur(70px);
-
-top:-120px;
-
-right:-120px;
-
-}
-
-/* shine */
-
-.card::after{
-
-content:"";
-
-position:absolute;
-
-top:-120%;
-
-left:-60%;
-
-width:60%;
-
-height:300%;
-
-background:linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.35),
-
-transparent
-
-);
-
-transform:rotate(25deg);
-
-transition:1s;
-
-}
-
-.card:hover::after{
-
-left:130%;
-
-}
-
-/* ==========================
-   ICON
-========================== */
-
-.card-icon{
-
-width:70px;
-
-height:70px;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:30px;
-
-background:linear-gradient(
-
-135deg,
-
-#FFE6F1,
-
-#FFD0E2
-
-);
-
-box-shadow:
-
-0 12px 30px rgba(255,180,205,.25);
-
-margin-bottom:28px;
-
-}
-
-/* ==========================
-   CARD TITLE
-========================== */
-
-.card h4{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:34px;
-
-font-weight:600;
-
-line-height:1.2;
-
-color:#B86C8A;
-
-margin-bottom:20px;
-
-}
-
-/* ==========================
-   CARD TEXT
-========================== */
-
-.card p{
-
-font-size:16px;
-
-line-height:2;
-
-color:#6B5A64;
-
-margin-bottom:28px;
-
-}
-
-/* ==========================
-   BUTTON
-========================== */
-
-.card a{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:8px;
-
-padding:14px 26px;
-
-border-radius:999px;
-
-background:linear-gradient(
-
-135deg,
-
-#F8C9DA,
-
-#F3B4CB
-
-);
-
-color:white;
-
-font-weight:600;
-
-text-decoration:none;
-
-transition:.45s;
-
-box-shadow:
-
-0 12px 28px rgba(243,180,203,.3);
-
-}
-
-.card a:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-
-0 20px 40px rgba(243,180,203,.42);
-
-}
-
-/* ==========================================
-   PINK PARADISE EFFECTS
-========================================== */
-
-/* --------------------
-   FLOATING CLOUDS
--------------------- */
-
-.cloud{
-
-position:absolute;
-
-background:rgba(255,255,255,.55);
-
-border-radius:100px;
-
-filter:blur(8px);
-
-opacity:.55;
-
-animation:cloudMove linear infinite;
-
-}
-
-.cloud::before,
-
-.cloud::after{
-
-content:"";
-
-position:absolute;
-
-background:inherit;
-
-border-radius:50%;
-
-}
-
-.cloud1{
-
-width:180px;
-
-height:60px;
-
-top:10%;
-
-left:-220px;
-
-animation-duration:45s;
-
-}
-
-.cloud1::before{
-
-width:70px;
-
-height:70px;
-
-left:25px;
-
-top:-30px;
-
-}
-
-.cloud1::after{
-
-width:90px;
-
-height:90px;
-
-right:20px;
-
-top:-40px;
-
-}
-
-.cloud2{
-
-width:240px;
-
-height:70px;
-
-top:32%;
-
-left:-280px;
-
-animation-duration:60s;
-
-animation-delay:-20s;
-
-}
-
-.cloud2::before{
-
-width:80px;
-
-height:80px;
-
-left:30px;
-
-top:-35px;
-
-}
-
-.cloud2::after{
-
-width:110px;
-
-height:110px;
-
-right:25px;
-
-top:-45px;
-
-}
-
-@keyframes cloudMove{
-
-from{
-
-transform:translateX(0);
-
-}
-
-to{
-
-transform:translateX(calc(100vw + 500px));
-
-}
-
-}
-
-/* --------------------
-   GLOWING MOON
--------------------- */
-
+/* MOON */
 .moon{
-
-position:absolute;
-
-top:90px;
-
-right:90px;
-
-width:90px;
-
-height:90px;
-
-border-radius:50%;
-
-background:#FFFDFE;
-
-box-shadow:
-
-0 0 35px rgba(255,255,255,.9),
-
-0 0 80px rgba(255,210,235,.7),
-
-0 0 150px rgba(255,210,235,.35);
-
-animation:moonGlow 5s ease-in-out infinite alternate;
-
+  position:absolute;top:80px;right:80px;width:85px;height:85px;
+  border-radius:50%;background:linear-gradient(135deg,#FFFDFE,#FFF0F8);
+  box-shadow:0 0 30px rgba(255,255,255,0.9),0 0 70px rgba(255,210,235,0.6),0 0 130px rgba(255,210,235,0.3);
+  animation:moonGlow 5s ease-in-out infinite alternate;z-index:2;
 }
+@keyframes moonGlow{from{transform:scale(1);}to{transform:scale(1.05);}}
 
-@keyframes moonGlow{
-
-from{
-
-transform:scale(1);
-
+/* CLOUDS */
+.cloud-svg{
+  position:absolute;opacity:0.5;animation:cloudMoveSvg linear infinite;
 }
+.cloud-svg:nth-child(1){top:12%;animation-duration:50s;}
+.cloud-svg:nth-child(2){top:35%;animation-duration:65s;animation-delay:-25s;}
+@keyframes cloudMoveSvg{from{transform:translateX(-300px);}to{transform:translateX(calc(100vw + 300px));}}
 
-to{
-
-transform:scale(1.06);
-
+/* SECTIONS */
+.section{width:100%;max-width:1350px;margin:auto;padding:120px 25px;position:relative;}
+.section-heading{text-align:center;margin-bottom:70px;}
+.section-heading .eyebrow{
+  display:inline-block;padding:10px 22px;border-radius:999px;
+  background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.75);
+  font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--pink-dark);margin-bottom:22px;
 }
-
-}
-
-/* --------------------
-   SPARKLES
--------------------- */
-
-.sparkles{
-
-position:absolute;
-
-inset:0;
-
-overflow:hidden;
-
-pointer-events:none;
-
-}
-
-.sparkles::before{
-
-content:"";
-
-position:absolute;
-
-width:4px;
-
-height:4px;
-
-background:white;
-
-border-radius:50%;
-
-box-shadow:
-
-120px 80px #fff,
-
-300px 220px #fff,
-
-450px 110px #fff,
-
-650px 180px #fff,
-
-820px 90px #fff,
-
-1000px 280px #fff,
-
-1150px 120px #fff,
-
-1400px 240px #fff,
-
-1600px 160px #fff,
-
-1750px 60px #fff,
-
-250px 500px #fff,
-
-620px 620px #fff,
-
-980px 720px #fff,
-
-1500px 640px #fff,
-
-1800px 520px #fff;
-
-animation:twinkle 3s ease-in-out infinite alternate;
-
-opacity:.85;
-
-}
-
-@keyframes twinkle{
-
-from{
-
-opacity:.2;
-
-transform:scale(.8);
-
-}
-
-to{
-
-opacity:1;
-
-transform:scale(1.5);
-
-}
-
-}
-
-/* --------------------
-   BUTTERFLIES
--------------------- */
-
-.butterflies{
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
-
-}
-
-.butterflies::before,
-
-.butterflies::after{
-
-content:"🦋";
-
-position:absolute;
-
-font-size:26px;
-
-opacity:.45;
-
-animation:fly 22s linear infinite;
-
-}
-
-.butterflies::before{
-
-left:-50px;
-
-top:35%;
-
-}
-
-.butterflies::after{
-
-right:-50px;
-
-top:65%;
-
-animation-delay:-10s;
-
-}
-
-@keyframes fly{
-
-0%{
-
-transform:translateX(0) translateY(0) rotate(0deg);
-
-}
-
-25%{
-
-transform:translateX(25vw) translateY(-30px) rotate(8deg);
-
-}
-
-50%{
-
-transform:translateX(50vw) translateY(20px) rotate(-6deg);
-
-}
-
-75%{
-
-transform:translateX(75vw) translateY(-25px) rotate(5deg);
-
-}
-
-100%{
-
-transform:translateX(110vw) translateY(10px) rotate(0deg);
-
-}
-
-}
-
-/* --------------------
-   FALLING PETALS
--------------------- */
-
-.petals{
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
-
-}
-
-.petals::before{
-
-content:"🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸";
-
-position:absolute;
-
-left:-5%;
-
-top:-80px;
-
-font-size:26px;
-
-letter-spacing:90px;
-
-animation:petalFall 18s linear infinite;
-
-opacity:.5;
-
-}
-
-@keyframes petalFall{
-
-0%{
-
-transform:translateY(-100px) rotate(0deg);
-
-}
-
-100%{
-
-transform:translateY(120vh) rotate(360deg);
-
-}
-
-}
-
-/* --------------------
-   QUOTE SECTION
--------------------- */
-
-.quote-banner{
-
-padding:120px 20px;
-
-display:flex;
-
-justify-content:center;
-
-}
-
-.quote-box{
-
-max-width:900px;
-
-padding:70px;
-
-text-align:center;
-
-border-radius:40px;
-
-background:rgba(255,255,255,.65);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.8);
-
-box-shadow:0 25px 70px rgba(255,185,210,.18);
-
-}
-
-.quote-text{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:46px;
-
-line-height:1.5;
-
-color:#C97798;
-
-margin-bottom:25px;
-
-}
-
-.quote-box span{
-
-font-size:18px;
-
-color:#866975;
-
-}
-
-/* --------------------
-   FOOTER
--------------------- */
-
-footer{
-
-padding:100px 20px 70px;
-
-text-align:center;
-
-}
-
-.footer-logo{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:56px;
-
-color:#D07D9E;
-
-margin-bottom:20px;
-
-}
-
-.footer-socials{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:18px;
-
-margin:35px 0;
-
-}
-
-.footer-socials a{
-
-text-decoration:none;
-
-padding:12px 24px;
-
-border-radius:999px;
-
-background:rgba(255,255,255,.65);
-
-color:#C97798;
-
-transition:.35s;
-
-}
-
-.footer-socials a:hover{
-
-background:#F8C7D9;
-
-color:white;
-
-transform:translateY(-4px);
-
-}
-
-.copyright{
-
-margin-top:30px;
-
-font-size:15px;
-
-opacity:.7;
-
-}
-
-/* ==========================================
-   SHOP SECTION
-========================================== */
-
-.shop-section{
-
-padding:120px 20px;
-
-text-align:center;
-
-}
-
-.shop-card{
-
-max-width:700px;
-
-margin:60px auto;
-
-padding:60px;
-
-border-radius:40px;
-
-background:rgba(255,255,255,.65);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.75);
-
-box-shadow:
-
-0 25px 70px rgba(255,185,210,.2);
-
-}
-
-.shop-card h4{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:46px;
-
-color:#C87898;
-
-margin-bottom:20px;
-
-}
-
-.shop-card p{
-
-font-size:17px;
-
-line-height:2;
-
-margin-bottom:35px;
-
-color:#6E5964;
-
-}
-
-.shop-card a{
-
-display:inline-block;
-
-padding:18px 42px;
-
-border-radius:999px;
-
-background:linear-gradient(135deg,#F8CADC,#F2AEC5);
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:.4s;
-
-box-shadow:0 15px 40px rgba(243,180,203,.3);
-
-}
-
-.shop-card a:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 25px 60px rgba(243,180,203,.45);
-
-}
-
-/* ==========================================
-   DIVIDER
-========================================== */
-
-.divider{
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-gap:20px;
-
-margin:80px auto;
-
-max-width:500px;
-
-}
-
-.line{
-
-flex:1;
-
-height:1px;
-
-background:linear-gradient(to right,
-
-transparent,
-
-#E8B5C9,
-
-transparent);
-
-}
-
-.flower{
-
-font-size:26px;
-
-color:#D689A7;
-
-}
-
-/* ==========================================
-   LINKS
-========================================== */
-
-a{
-
-transition:.35s ease;
-
-}
-
-/* ==========================================
-   SELECTION
-========================================== */
-
-::selection{
-
-background:#F7C8DA;
-
-color:white;
-
-}
-
-/* ==========================================
-   SCROLLBAR
-========================================== */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#FFF5F8;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#E8AFC5;
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#D88DAA;
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:992px){
-
-.hero h1{
-
-font-size:70px;
-
-}
-
-.hero h2{
-
-font-size:36px;
-
-}
-
 .section-heading h3{
-
-font-size:50px;
-
+  font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:600;
+  line-height:1.15;color:#C87496;margin-bottom:16px;
 }
+.section-heading p{max-width:700px;margin:auto;font-size:17px;line-height:2;color:#6D5A65;}
 
-nav{
+/* CARDS GRID */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:32px;margin-top:50px;}
 
-padding:15px 25px;
-
-}
-
-nav ul{
-
-gap:18px;
-
-}
-
-}
-
-@media(max-width:768px){
-
-nav{
-
-flex-direction:column;
-
-gap:18px;
-
-padding:22px;
-
-border-radius:30px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:14px;
-
-}
-
-.hero{
-
-padding-top:220px;
-
-}
-
-.hero h1{
-
-font-size:56px;
-
-}
-
-.hero h2{
-
-font-size:32px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-line-height:1.9;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.primary-btn,
-
-.secondary-btn{
-
-width:260px;
-
-text-align:center;
-
-}
-
-.cards{
-
-grid-template-columns:1fr;
-
-}
-
-.section-heading h3{
-
-font-size:42px;
-
-}
-
-.quote-box{
-
-padding:45px 30px;
-
-}
-
-.quote-text{
-
-font-size:34px;
-
-}
-
-.footer-logo{
-
-font-size:44px;
-
-}
-
-.shop-card{
-
-padding:40px 25px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.hero h1{
-
-font-size:44px;
-
-}
-
-.hero h2{
-
-font-size:28px;
-
-}
-
-.section-heading h3{
-
-font-size:36px;
-
-}
-
-.nav-logo{
-
-font-size:28px;
-
-}
-
+/* GLASS CARD */
 .card{
-
-padding:28px;
-
+  position:relative;padding:36px;border-radius:32px;overflow:hidden;
+  background:rgba(255,255,255,0.58);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.8);
+  box-shadow:0 20px 50px rgba(255,185,210,0.15),0 10px 25px rgba(255,255,255,0.5);
+  transition:0.5s cubic-bezier(0.2,0.8,0.2,1);
 }
-
+.card::before{
+  content:'';position:absolute;
+  inset:0;border-radius:32px;padding:1px;
+  background:linear-gradient(135deg,rgba(248,199,218,0.6),rgba(255,255,255,0.2),rgba(243,180,203,0.4));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;
+}
+.card::after{
+  content:'';position:absolute;top:-120%;left:-60%;
+  width:60%;height:300%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transform:rotate(25deg);transition:0.8s;
+}
+.card:hover{transform:translateY(-12px) scale(1.015);box-shadow:0 35px 80px rgba(255,170,205,0.25);}
+.card:hover::after{left:130%;}
+.card-icon{
+  width:66px;height:66px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:28px;
+  background:linear-gradient(135deg,#FFE6F1,#FFD0E2);
+  box-shadow:0 12px 30px rgba(255,180,205,0.22);margin-bottom:24px;
+}
 .card h4{
-
-font-size:28px;
-
+  font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;
+  line-height:1.2;color:#B86C8A;margin-bottom:16px;
 }
-
+.card p{font-size:15px;line-height:2;color:#6B5A64;margin-bottom:24px;}
+.card a{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;
+  background:linear-gradient(135deg,#F8C9DA,#F3B4CB);
+  color:white;font-weight:600;font-size:14px;text-decoration:none;
+  transition:0.4s;box-shadow:0 12px 28px rgba(243,180,203,0.28);
 }
+.card a:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(243,180,203,0.4);}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;justify-content:center;gap:20px;margin:80px auto;max-width:500px;}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#E8B5C9,transparent);}
+.divider-flower{font-size:22px;color:var(--pink-dark);}
+
+/* QUOTE BANNER */
+.quote-banner{padding:100px 20px;display:flex;justify-content:center;}
+.quote-box{
+  max-width:900px;padding:65px;text-align:center;border-radius:40px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.8);
+  box-shadow:0 25px 70px rgba(255,185,210,0.18);
+}
+.quote-text{
+  font-family:'Cormorant Garamond',serif;font-size:44px;
+  line-height:1.5;color:#C97798;margin-bottom:20px;
+}
+.quote-box span{font-size:16px;color:#866975;}
+
+/* SHOP */
+.shop-section{padding:100px 20px;text-align:center;}
+.shop-card{
+  max-width:680px;margin:55px auto;padding:55px;border-radius:40px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.75);
+  box-shadow:0 25px 70px rgba(255,185,210,0.18);
+}
+.shop-card h4{font-family:'Cormorant Garamond',serif;font-size:44px;color:#C87898;margin-bottom:18px;}
+.shop-card p{font-size:16px;line-height:2;margin-bottom:32px;color:#6E5964;}
+.shop-card a{
+  display:inline-block;padding:18px 42px;border-radius:999px;
+  background:linear-gradient(135deg,#F8CADC,#F2AEC5);
+  color:white;text-decoration:none;font-weight:600;
+  transition:0.4s;box-shadow:0 15px 40px rgba(243,180,203,0.3);
+}
+.shop-card a:hover{transform:translateY(-5px);box-shadow:0 25px 60px rgba(243,180,203,0.45);}
+
+/* FOOTER */
+footer{padding:90px 20px 60px;text-align:center;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:52px;color:#D07D9E;margin-bottom:16px;}
+.footer-socials{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin:30px 0;}
+.footer-socials a{
+  text-decoration:none;padding:10px 22px;border-radius:999px;
+  background:rgba(255,255,255,0.65);color:#C97798;transition:0.35s;font-size:14px;
+}
+.footer-socials a:hover{background:#F8C7D9;color:white;transform:translateY(-4px);}
+.copyright{margin-top:28px;font-size:14px;opacity:0.6;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#FFF5F8;}
+::-webkit-scrollbar-thumb{background:#E8AFC5;border-radius:20px;}
+::-webkit-scrollbar-thumb:hover{background:#D88DAA;}
+::selection{background:#F7C8DA;color:white;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:54px;}
+  .hero h2{font-size:32px;}
+  .section-heading h3{font-size:42px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .moon{width:55px;height:55px;top:100px;right:20px;}
+  .quote-text{font-size:32px;}
+  .quote-box{padding:40px 25px;}
+  .cards{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:42px;}
+  .section-heading h3{font-size:34px;}
+}
+</style>
 </head>
-
-
-
 <body>
 
-<!-- Floating Background -->
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
+<!-- Background -->
 <div class="background">
-
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-<div class="blob blob4"></div>
-
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-
-<div class="moon"></div>
-
-<div class="sparkles"></div>
-
-<div class="petals"></div>
-
-<div class="butterflies"></div>
-
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="blob blob4"></div>
 </div>
 
+<!-- Sparkles -->
+<div class="sparkles" id="sparkles"></div>
 
 <!-- Navigation -->
-
-<nav>
-
-<div class="nav-logo">
-
-LaxNara Wini
-
-</div>
-
-<ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#manifestation">Manifestation</a></li>
-
-<li><a href="#creator">Creator Journey</a></li>
-
-<li><a href="#healing">Healing</a></li>
-
-<li><a href="#shop">Shop</a></li>
-
-</ul>
-
+<nav id="navbar">
+  <div class="nav-logo">LaxNara Wini</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#manifestation">Manifestation</a></li>
+    <li><a href="#creator">Creator Journey</a></li>
+    <li><a href="#healing">Healing</a></li>
+    <li><a href="#shop">Shop</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
-<!-- Hero -->
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#" onclick="closeMobile()">Home</a></li>
+    <li><a href="#manifestation" onclick="closeMobile()">Manifestation</a></li>
+    <li><a href="#creator" onclick="closeMobile()">Creator Journey</a></li>
+    <li><a href="#healing" onclick="closeMobile()">Healing</a></li>
+    <li><a href="#shop" onclick="closeMobile()">Shop</a></li>
+  </ul>
+</div>
 
+<!-- Hero -->
 <header class="hero">
 
-<div class="hero-content">
+  <!-- SVG Moon -->
+  <div class="moon"></div>
 
-<div class="hero-flower flower-left">
-🌸
-</div>
+  <!-- SVG Clouds -->
+  <svg class="cloud-svg" style="top:10%;left:-300px;" width="220" height="80" viewBox="0 0 220 80">
+    <ellipse cx="110" cy="60" rx="100" ry="30" fill="rgba(255,255,255,0.6)"/>
+    <ellipse cx="80" cy="40" rx="55" ry="38" fill="rgba(255,255,255,0.6)"/>
+    <ellipse cx="145" cy="35" rx="48" ry="35" fill="rgba(255,255,255,0.6)"/>
+  </svg>
+  <svg class="cloud-svg" style="top:32%;left:-300px;opacity:0.4;" width="180" height="65" viewBox="0 0 180 65">
+    <ellipse cx="90" cy="50" rx="80" ry="22" fill="rgba(255,255,255,0.65)"/>
+    <ellipse cx="65" cy="32" rx="45" ry="30" fill="rgba(255,255,255,0.65)"/>
+    <ellipse cx="120" cy="28" rx="40" ry="28" fill="rgba(255,255,255,0.65)"/>
+  </svg>
 
-<div class="hero-flower flower-right">
-🌸
-</div>
+  <!-- SVG Butterflies -->
+  <svg class="butterfly-svg" style="top:30%;left:-80px;" width="60" height="50" viewBox="0 0 60 50">
+    <path d="M30,25 Q10,5 2,15 Q-2,28 15,30 Q22,31 30,25Z" fill="rgba(212,122,156,0.5)"/>
+    <path d="M30,25 Q50,5 58,15 Q62,28 45,30 Q38,31 30,25Z" fill="rgba(212,122,156,0.5)"/>
+    <path d="M30,25 Q12,35 8,42 Q14,48 22,38 Q26,33 30,25Z" fill="rgba(241,175,198,0.5)"/>
+    <path d="M30,25 Q48,35 52,42 Q46,48 38,38 Q34,33 30,25Z" fill="rgba(241,175,198,0.5)"/>
+    <line x1="30" y1="20" x2="30" y2="30" stroke="#C87898" stroke-width="1.5"/>
+  </svg>
+  <svg class="butterfly-svg" style="top:60%;left:-80px;animation-delay:-12s;" width="50" height="42" viewBox="0 0 60 50">
+    <path d="M30,25 Q10,5 2,15 Q-2,28 15,30 Q22,31 30,25Z" fill="rgba(248,199,218,0.6)"/>
+    <path d="M30,25 Q50,5 58,15 Q62,28 45,30 Q38,31 30,25Z" fill="rgba(248,199,218,0.6)"/>
+    <path d="M30,25 Q12,35 8,42 Q14,48 22,38 Q26,33 30,25Z" fill="rgba(212,122,156,0.45)"/>
+    <path d="M30,25 Q48,35 52,42 Q46,48 38,38 Q34,33 30,25Z" fill="rgba(212,122,156,0.45)"/>
+    <line x1="30" y1="20" x2="30" y2="30" stroke="#C87898" stroke-width="1.5"/>
+  </svg>
 
-<h1>
+  <!-- Cherry Blossom Canvas -->
+  <canvas class="cherry-canvas" id="cherryCanvas"></canvas>
 
-LaxNara Wini
-
-</h1>
-
-<h2>
-
-Manifest Your Dream Life
-
-</h2>
-
-<p>
-
-A dreamy corner of the internet where manifestation,
-abundance, healing, self-growth and soft living
-come together.
-
-Slow down.
-
-Believe bigger.
-
-Become the version of you you've always imagined.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#manifestation" class="primary-btn">
-
-Explore the Blog
-
-</a>
-
-<a href="https://laxnarstudio.gumroad.com"
-
-target="_blank"
-
-class="secondary-btn">
-
-Visit Shop
-
-</a>
-
-</div>
-
-<div class="socials">
-
-<a href="https://in.pinterest.com/laxnarawini/" target="_blank">
-
-Pinterest
-
-</a>
-
-<a href="https://www.instagram.com/laxnarawini/" target="_blank">
-
-Instagram
-
-</a>
-
-<a href="https://www.threads.net/@laxnarawini" target="_blank">
-
-Threads
-
-</a>
-
-</div>
-
-</div>
-
+  <div class="hero-content">
+    <div class="hero-badge">✨ Manifest · Heal · Become</div>
+    <h1>LaxNara Wini</h1>
+    <h2>Manifest Your Dream Life</h2>
+    <p>A dreamy corner of the internet where manifestation, abundance, healing, self-growth and soft living come together. Slow down. Believe bigger. Become the version of you you've always imagined.</p>
+    <div class="hero-buttons">
+      <a href="#manifestation" class="primary-btn">Explore the Blog</a>
+      <a href="https://laxnarstudio.gumroad.com" target="_blank" class="secondary-btn">Visit Shop</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://in.pinterest.com/laxnarawini/" target="_blank">Pinterest</a>
+      <a href="https://www.instagram.com/laxnarawini/" target="_blank">Instagram</a>
+      <a href="https://www.threads.net/@laxnarawini" target="_blank">Threads</a>
+      <a href="https://www.youtube.com/@LaxNaraWini" target="_blank">YouTube</a>
+    </div>
+  </div>
 </header>
 
-<!-- Decorative Divider -->
+<div class="divider"><div class="divider-line"></div><div class="divider-flower">✿</div><div class="divider-line"></div></div>
 
-<section class="divider">
-
-<div class="line"></div>
-
-<div class="flower">
-
-✿
-
-</div>
-
-<div class="line"></div>
-
-</section>
-
-<!-- Manifestation Section Starts Here -->
-
+<!-- Manifestation -->
 <section id="manifestation" class="section">
-
-<div class="section-heading">
-
-<span>Manifestation</span>
-
-<h3>
-
-Latest Manifestation Blogs
-
-</h3>
-
-<p>
-
-Thoughts, guides and inspiration to help you attract the life you deserve.
-
-</p>
-
-</div>
-
-<div class="cards">
-
-    <div class="card-icon">✨</div>
-
-    <h4>The Truth About Lucky Girl Syndrome and True Alignment</h4>
-
-    <p>
-        A deeper look into the mindset behind Lucky Girl Syndrome and how
-        true alignment can completely transform your reality.
-    </p>
-
-    <a href="luckygirlsyndrome.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">💸</div>
-
-    <h4>How to Manifest Money as a Beginner</h4>
-
-    <p>
-        Learn how to shift your money mindset and begin attracting abundance
-        with simple daily manifestation practices.
-    </p>
-
-    <a href="manifestmoneybeginner.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">🌸</div>
-
-    <h4>How to Raise Your Vibration</h4>
-
-    <p>
-        Gentle habits that naturally raise your energy and help you become
-        magnetic to everything you desire.
-    </p>
-
-    <a href="raiseyourvibration.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">🌙</div>
-
-    <h4>How to Manifest Your Dream Life</h4>
-
-    <p>
-        Build the future you keep imagining using mindset, visualization,
-        gratitude and aligned action.
-    </p>
-
-    <a href="manifestdreamlife.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">🦋</div>
-
-    <h4>Signs Your Manifestation Is Coming</h4>
-
-    <p>
-        Small but powerful signs that your desires may already be making
-        their way into your life.
-    </p>
-
-    <a href="signsmanifestationcoming.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">💗</div>
-
-    <h4>How Affirmation Cards Help You Attract Wealth</h4>
-
-    <p>
-        Discover why daily affirmations can strengthen your abundance
-        mindset and support long-term growth.
-    </p>
-
-    <a href="affirmationcardswealthabundance.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">🌷</div>
-
-    <h4>How to Attract Abundance in Life</h4>
-
-    <p>
-        Open yourself to more opportunities, confidence and financial
-        abundance with small mindset shifts.
-    </p>
-
-    <a href="attractabundance.html">Read Article →</a>
-
-</div>
-
-<div class="card">
-
-    <div class="card-icon">☁️</div>
-
-    <h4>How to Start Manifesting for Beginners</h4>
-
-    <p>
-        Everything you need to know to begin your manifestation journey
-        with clarity and confidence.
-    </p>
-
-    <a href="manifestationbeginners.html">Read Article →</a>
-
-</div>
-
-</div>
-
+  <div class="section-heading reveal">
+    <div class="eyebrow">Manifestation</div>
+    <h3>Latest Manifestation Blogs</h3>
+    <p>Thoughts, guides and inspiration to help you attract the life you deserve.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal"><div class="card-icon">✨</div><h4>The Truth About Lucky Girl Syndrome</h4><p>A deeper look into the mindset behind Lucky Girl Syndrome and how true alignment can completely transform your reality.</p><a href="luckygirlsyndrome.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">💸</div><h4>How to Manifest Money as a Beginner</h4><p>Learn how to shift your money mindset and begin attracting abundance with simple daily manifestation practices.</p><a href="manifestmoneybeginner.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🌸</div><h4>How to Raise Your Vibration</h4><p>Gentle habits that naturally raise your energy and help you become magnetic to everything you desire.</p><a href="raiseyourvibration.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🌙</div><h4>How to Manifest Your Dream Life</h4><p>Build the future you keep imagining using mindset, visualization, gratitude and aligned action.</p><a href="manifestdreamlife.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🦋</div><h4>Signs Your Manifestation Is Coming</h4><p>Small but powerful signs that your desires may already be making their way into your life.</p><a href="signsmanifestationcoming.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">💗</div><h4>How Affirmation Cards Help You Attract Wealth</h4><p>Discover why daily affirmations can strengthen your abundance mindset and support long-term growth.</p><a href="affirmationcardswealthabundance.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🌷</div><h4>How to Attract Abundance in Life</h4><p>Open yourself to more opportunities, confidence and financial abundance with small mindset shifts.</p><a href="attractabundance.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">☁️</div><h4>How to Start Manifesting for Beginners</h4><p>Everything you need to know to begin your manifestation journey with clarity and confidence.</p><a href="manifestationbeginners.html">Read Article →</a></div>
+  </div>
 </section>
 
-  <!-- Creator Journey -->
+<div class="divider"><div class="divider-line"></div><div class="divider-flower">✿</div><div class="divider-line"></div></div>
 
+<!-- Creator Journey -->
 <section id="creator" class="section">
-
-<div class="section-heading">
-
-<span>Creator Journey</span>
-
-<h3>
-
-Building My Dream One Day At A Time
-
-</h3>
-
-<p>
-
-An honest behind-the-scenes look at creating LaxNara Wini, growing online,
-and documenting every milestone.
-
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-icon">📌</div>
-
-<h4>How I Started Getting My First Pinterest Views</h4>
-
-<p>
-
-The beginning of my Pinterest journey, what actually worked, and how I
-started getting organic traffic.
-
-</p>
-
-<a href="pinterestjourney.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">💻</div>
-
-<h4>Finding My Flow As A Creator</h4>
-
-<p>
-
-Learning how consistency beats perfection while slowly building something
-I'm genuinely proud of.
-
-</p>
-
-<a href="mycreatorjourney.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🌸</div>
-
-<h4>Starting From Zero</h4>
-
-<p>
-
-A personal story about beginning with no audience, no experience,
-and simply refusing to quit.
-
-</p>
-
-<a href="creatorjourneybeginner.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">✨</div>
-
-<h4>How I Started Selling Digital Products</h4>
-
-<p>
-
-The lessons I learned while creating my very first digital products
-and building an online business.
-
-</p>
-
-<a href="digitalproductjourney.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🌙</div>
-
-<h4>What To Do When You Feel Creatively Stuck</h4>
-
-<p>
-
-Creative blocks happen to everyone.
-Here's how I gently find inspiration again.
-
-</p>
-
-<a href="creatorinspiration.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">💗</div>
-
-<h4>I Feel Unmotivated Sometimes Too</h4>
-
-<p>
-
-A reminder that you don't need to feel inspired every day to keep moving
-towards your dreams.
-
-</p>
-
-<a href="mydigitalproductjourney.html">
-
-Read Story →
-
-</a>
-
-</div>
-
-</div>
-
+  <div class="section-heading reveal">
+    <div class="eyebrow">Creator Journey</div>
+    <h3>Building My Dream One Day At A Time</h3>
+    <p>An honest behind-the-scenes look at creating LaxNara Wini, growing online, and documenting every milestone.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal"><div class="card-icon">📌</div><h4>How I Started Getting My First Pinterest Views</h4><p>The beginning of my Pinterest journey, what actually worked, and how I started getting organic traffic.</p><a href="pinterestjourney.html">Read Story →</a></div>
+    <div class="card reveal"><div class="card-icon">💻</div><h4>Finding My Flow As A Creator</h4><p>Learning how consistency beats perfection while slowly building something I'm genuinely proud of.</p><a href="mycreatorjourney.html">Read Story →</a></div>
+    <div class="card reveal"><div class="card-icon">🌸</div><h4>Starting From Zero</h4><p>A personal story about beginning with no audience, no experience, and simply refusing to quit.</p><a href="creatorjourneybeginner.html">Read Story →</a></div>
+    <div class="card reveal"><div class="card-icon">✨</div><h4>How I Started Selling Digital Products</h4><p>The lessons I learned while creating my very first digital products and building an online business.</p><a href="digitalproductjourney.html">Read Story →</a></div>
+    <div class="card reveal"><div class="card-icon">🌙</div><h4>What To Do When You Feel Creatively Stuck</h4><p>Creative blocks happen to everyone. Here's how I gently find inspiration again.</p><a href="creatorinspiration.html">Read Story →</a></div>
+    <div class="card reveal"><div class="card-icon">💗</div><h4>I Feel Unmotivated Sometimes Too</h4><p>A reminder that you don't need to feel inspired every day to keep moving towards your dreams.</p><a href="mydigitalproductjourney.html">Read Story →</a></div>
+  </div>
 </section>
 
-<!-- Healing & Self Growth -->
+<div class="divider"><div class="divider-line"></div><div class="divider-flower">✿</div><div class="divider-line"></div></div>
 
+<!-- Healing -->
 <section id="healing" class="section">
-
-<div class="section-heading">
-
-<span>Healing & Self Growth</span>
-
-<h3>
-
-Gentle Words For Your Softest Seasons
-
-</h3>
-
-<p>
-
-A peaceful collection of articles to help you heal, grow,
-love yourself more deeply and reconnect with your inner peace.
-
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="card-icon">🤍</div>
-
-<h4>How To Heal Your Inner Child</h4>
-
-<p>
-
-Reconnect with the younger version of yourself through
-gentle practices, compassion and emotional healing.
-
-</p>
-
-<a href="healyourinnerchild.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🌷</div>
-
-<h4>How To Practice Self Love Every Day</h4>
-
-<p>
-
-Small daily rituals that help you build confidence,
-self-worth and a kinder relationship with yourself.
-
-</p>
-
-<a href="selfloveeveryday.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">☁️</div>
-
-<h4>How To Stop Overthinking And Find Peace</h4>
-
-<p>
-
-Quiet your mind, release anxious thoughts
-and create more calm in your everyday life.
-
-</p>
-
-<a href="stopoverthinkingfindpeace.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🌸</div>
-
-<h4>How To Shift Your Mindset When Life Feels Hard</h4>
-
-<p>
-
-Discover simple mindset shifts that help you
-move through difficult seasons with hope.
-
-</p>
-
-<a href="mindsetblog.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">🦋</div>
-
-<h4>The Child's Language</h4>
-
-<p>
-
-A reflective story about rediscovering wonder,
-curiosity and the joy we often leave behind.
-
-</p>
-
-<a href="thechildslanguage.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">✨</div>
-
-<h4>What Are Affirmations And Do They Work?</h4>
-
-<p>
-
-Understand the psychology behind affirmations
-and how they can gently reshape your mindset.
-
-</p>
-
-<a href="whatareaffirmations.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-<div class="card">
-
-<div class="card-icon">💖</div>
-
-<h4>Soft Words For Heavy Days</h4>
-
-<p>
-
-A comforting space filled with gentle reminders
-for the days when everything feels overwhelming.
-
-</p>
-
-<a href="softwordsforheavydays.html">
-
-Read Article →
-
-</a>
-
-</div>
-
-</div>
-
+  <div class="section-heading reveal">
+    <div class="eyebrow">Healing & Self Growth</div>
+    <h3>Gentle Words For Your Softest Seasons</h3>
+    <p>A peaceful collection of articles to help you heal, grow, love yourself more deeply and reconnect with your inner peace.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal"><div class="card-icon">🤍</div><h4>How To Heal Your Inner Child</h4><p>Reconnect with the younger version of yourself through gentle practices, compassion and emotional healing.</p><a href="healyourinnerchild.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🌷</div><h4>How To Practice Self Love Every Day</h4><p>Small daily rituals that help you build confidence, self-worth and a kinder relationship with yourself.</p><a href="selfloveeveryday.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">☁️</div><h4>How To Stop Overthinking And Find Peace</h4><p>Quiet your mind, release anxious thoughts and create more calm in your everyday life.</p><a href="stopoverthinkingfindpeace.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🌸</div><h4>How To Shift Your Mindset When Life Feels Hard</h4><p>Discover simple mindset shifts that help you move through difficult seasons with hope.</p><a href="mindsetblog.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">🦋</div><h4>The Child's Language</h4><p>A reflective story about rediscovering wonder, curiosity and the joy we often leave behind.</p><a href="thechildslanguage.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">✨</div><h4>What Are Affirmations And Do They Work?</h4><p>Understand the psychology behind affirmations and how they can gently reshape your mindset.</p><a href="whatareaffirmations.html">Read Article →</a></div>
+    <div class="card reveal"><div class="card-icon">💖</div><h4>Soft Words For Heavy Days</h4><p>A comforting space filled with gentle reminders for the days when everything feels overwhelming.</p><a href="softwordsforheavydays.html">Read Article →</a></div>
+  </div>
 </section>
 
 <!-- Quote Banner -->
-
 <section class="quote-banner">
-
-<div class="quote-box">
-
-<p class="quote-text">
-
-"The life you're manifesting is already making its way to you."
-
-</p>
-
-<span>
-
-— LaxNara Wini
-
-</span>
-
-</div>
-
+  <div class="quote-box reveal">
+    <p class="quote-text">"The life you're manifesting is already making its way to you."</p>
+    <span>— LaxNara Wini</span>
+  </div>
 </section>
 
 <!-- Shop -->
-
 <section id="shop" class="shop-section">
-
-<div class="section-heading">
-
-<span>Digital Shop</span>
-
-<h3>
-
-Beautiful Digital Products To Support Your Journey
-
-</h3>
-
-<p>
-
-Created with love to inspire abundance,
-confidence and intentional living.
-
-</p>
-
-</div>
-
-<div class="shop-card">
-
-<h4>🌸 Visit My Shop</h4>
-
-<p>
-
-Explore affirmation cards, printable journals,
-manifestation tools and more.
-
-</p>
-
-<a href="https://laxnarstudio.gumroad.com" target="_blank">
-
-Shop Now 
-
-</a>
-
-</div>
-
+  <div class="section-heading reveal">
+    <div class="eyebrow">Digital Shop</div>
+    <h3>Beautiful Digital Products To Support Your Journey</h3>
+    <p>Created with love to inspire abundance, confidence and intentional living.</p>
+  </div>
+  <div class="shop-card reveal">
+    <h4>🌸 Visit My Shop</h4>
+    <p>Explore affirmation cards, printable journals, manifestation tools and more.</p>
+    <a href="https://laxnarstudio.gumroad.com" target="_blank">Shop Now</a>
+  </div>
 </section>
 
+<!-- Footer -->
 <footer>
-
-<div class="footer-logo">
-
-LaxNara Wini
-
-</div>
-
-<p>
-
-Manifest Your Dream Life
-
-</p>
-
-<div class="footer-socials">
-
-<a href="https://in.pinterest.com/laxnarawini/" target="_blank">
-
-Pinterest
-
-</a>
-
-<a href="https://www.instagram.com/laxnarawini/" target="_blank">
-
-Instagram
-
-</a>
-
-<a href="https://www.threads.net/@laxnarawini" target="_blank">
-
-Threads
-
-</a>
-
-<a href="https://www.youtube.com/@LaxNaraWini" target="_blank">
-
-YouTube
-
-</a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 LaxNara Wini · Manifest Your Dream Life
-
-</p>
-
+  <div class="footer-logo">LaxNara Wini</div>
+  <p>Manifest Your Dream Life</p>
+  <div class="footer-socials">
+    <a href="https://in.pinterest.com/laxnarawini/" target="_blank">Pinterest</a>
+    <a href="https://www.instagram.com/laxnarawini/" target="_blank">Instagram</a>
+    <a href="https://www.threads.net/@laxnarawini" target="_blank">Threads</a>
+    <a href="https://www.youtube.com/@LaxNaraWini" target="_blank">YouTube</a>
+  </div>
+  <p class="copyright">© 2026 LaxNara Wini · Manifest Your Dream Life</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+// ===== CURSOR =====
+const cursor = document.getElementById('cursor');
+const cursorGlow = document.getElementById('cursorGlow');
+let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
+const particles = [];
 
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursor.style.left = mouseX - 6 + 'px';
+  cursor.style.top = mouseY - 6 + 'px';
+  spawnParticle(mouseX, mouseY);
+});
+
+function animateGlow() {
+  glowX += (mouseX - glowX) * 0.12;
+  glowY += (mouseY - glowY) * 0.12;
+  cursorGlow.style.left = glowX - 20 + 'px';
+  cursorGlow.style.top = glowY - 20 + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'scale(2)';
+    cursorGlow.style.transform = 'scale(1.5)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'scale(1)';
+    cursorGlow.style.transform = 'scale(1)';
+  });
+});
+
+let particleThrottle = 0;
+function spawnParticle(x, y) {
+  particleThrottle++;
+  if (particleThrottle % 4 !== 0) return;
+  const colors = ['#F8C7D9','#F1AFC6','#E09AB7','#D47A9C','#FFE7F1'];
+  const p = document.createElement('div');
+  p.className = 'cursor-particle';
+  p.style.left = (x + (Math.random()-0.5)*16) + 'px';
+  p.style.top = (y + (Math.random()-0.5)*16) + 'px';
+  p.style.width = (Math.random()*5+3) + 'px';
+  p.style.height = p.style.width;
+  p.style.background = colors[Math.floor(Math.random()*colors.length)];
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 600);
+}
+
+// ===== SPARKLES =====
+const sparklesContainer = document.getElementById('sparkles');
+for (let i = 0; i < 35; i++) {
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.style.left = Math.random()*100 + '%';
+  s.style.top = Math.random()*100 + '%';
+  s.style.animationDelay = Math.random()*4 + 's';
+  s.style.animationDuration = (2+Math.random()*3) + 's';
+  sparklesContainer.appendChild(s);
+}
+
+// ===== CHERRY BLOSSOMS =====
+const canvas = document.getElementById('cherryCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+const petals = [];
+for (let i = 0; i < 28; i++) {
+  petals.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height - canvas.height,
+    size: Math.random() * 10 + 6,
+    speedY: Math.random() * 1.2 + 0.4,
+    speedX: (Math.random() - 0.5) * 0.8,
+    rotation: Math.random() * 360,
+    rotSpeed: (Math.random() - 0.5) * 1.5,
+    opacity: Math.random() * 0.5 + 0.3,
+    color: ['#F8C7D9','#F1AFC6','#FFAEC9','#FFD5E8','#E8A0BE'][Math.floor(Math.random()*5)]
+  });
+}
+
+function drawPetal(x, y, size, rotation, color, opacity) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(rotation * Math.PI / 180);
+  ctx.globalAlpha = opacity;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(0, -size);
+  ctx.bezierCurveTo(size*0.6, -size*0.8, size*0.8, 0, 0, size*0.5);
+  ctx.bezierCurveTo(-size*0.8, 0, -size*0.6, -size*0.8, 0, -size);
+  ctx.fill();
+  ctx.restore();
+}
+
+function animatePetals() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  petals.forEach(p => {
+    p.y += p.speedY;
+    p.x += p.speedX + Math.sin(p.y * 0.015) * 0.4;
+    p.rotation += p.rotSpeed;
+    if (p.y > canvas.height + 20) { p.y = -20; p.x = Math.random() * canvas.width; }
+    drawPetal(p.x, p.y, p.size, p.rotation, p.color, p.opacity);
+  });
+  requestAnimationFrame(animatePetals);
+}
+animatePetals();
+
+// ===== NAVBAR SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('open');
+}
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
-
 </html>
