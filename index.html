@@ -7,20 +7,28 @@
 
 <meta name="p:domain_verify" content="f1429319a4e819013f2d8174ead4c023"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---cream:#FFF8FA;
---pink:#F6D4DF;
---soft-pink:#FBE8EE;
---text:#5A4A42;
---card:#FFFFFF;
---accent:#E8A8BC;
---accent-dark:#B57A8A;
+
+--bg:#FFF9FC;
+
+--bg2:#FFF4F8;
+
+--pink:#F8C9DA;
+
+--rose:#F0AFC7;
+
+--dark:#5A4A52;
+
+--white:rgba(255,255,255,.72);
+
+--glass:rgba(255,255,255,.55);
+
+--border:rgba(255,255,255,.65);
+
 }
 
 *{
@@ -31,37 +39,275 @@ font-family:'Quicksand', sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#FFF8FA,#FBE8EE);
-color:var(--text);
+
+margin:0;
+
+background:
+
+radial-gradient(circle at 10% 10%,#FFDDEB 0%,transparent 25%),
+
+radial-gradient(circle at 90% 20%,#FFEAF3 0%,transparent 25%),
+
+radial-gradient(circle at 25% 80%,#FFD9E7 0%,transparent 30%),
+
+linear-gradient(180deg,#FFF9FC,#FFF3F8,#FFF9FC);
+
+font-family:'Poppins',sans-serif;
+
+color:var(--dark);
+
 overflow-x:hidden;
-padding:0 20px;
+
+position:relative;
+
 }
 
-.doodle{
+  <body>
+  
+  <div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+<div class="blob blob4"></div>
+
+  .blob{
+
 position:fixed;
-font-size:22px;
-opacity:0.15;
-color:var(--accent);
-animation: float 10s infinite ease-in-out;
-pointer-events:none;
-z-index:0;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.45;
+
+z-index:-2;
+
+animation:blobMove 20s infinite alternate ease-in-out;
+
 }
 
-.d1{top:15%; left:8%;}
-.d2{top:30%; right:10%; animation-duration:14s;}
-.d3{bottom:20%; left:12%; animation-duration:12s;}
-.d4{bottom:10%; right:18%; animation-duration:16s;}
+.blob1{
 
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+width:500px;
+
+height:500px;
+
+background:#FFD8E7;
+
+top:-100px;
+
+left:-120px;
+
+}
+
+.blob2{
+
+width:450px;
+
+height:450px;
+
+background:#FFEAF5;
+
+right:-150px;
+
+top:120px;
+
+}
+
+.blob3{
+
+width:350px;
+
+height:350px;
+
+background:#FFD1E5;
+
+bottom:-120px;
+
+left:30%;
+
+}
+
+.blob4{
+
+width:300px;
+
+height:300px;
+
+background:#FFF0F6;
+
+bottom:40px;
+
+right:15%;
+
+}
+
+@keyframes blobMove{
+
+from{
+
+transform:translateY(0) scale(1);
+
+}
+
+to{
+
+transform:translateY(-50px) scale(1.15);
+
+}
+
+}
+
+.sparkle{
+
+position:fixed;
+
+color:#F6AFC8;
+
+opacity:.45;
+
+font-size:20px;
+
+pointer-events:none;
+
+animation:sparkleFloat 12s infinite ease-in-out;
+
+}
+
+.s1{top:8%;left:8%;}
+
+.s2{top:25%;right:15%;}
+
+.s3{bottom:30%;left:20%;}
+
+.s4{bottom:12%;right:10%;}
+
+.s5{top:60%;left:45%;}
+
+.s6{top:40%;right:35%;}
+
+.s7{bottom:40%;left:70%;}
+
+.s8{top:15%;left:60%;}
+
+@keyframes sparkleFloat{
+
+50%{
+
+transform:translateY(-15px);
+
+opacity:.8;
+
+}
+
 }
 
 header{
+
 text-align:center;
-padding:60px 20px 30px;
+
+padding:120px 20px 90px;
+
 position:relative;
-z-index:2;
+
+}
+
+.logo{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:72px;
+
+font-weight:600;
+
+letter-spacing:2px;
+
+color:#C57D98;
+
+}
+
+.hero-subtitle{
+
+font-family:'Great Vibes',cursive;
+
+font-size:34px;
+
+margin-top:15px;
+
+color:#D78CA8;
+
+}
+
+.hero-text{
+
+margin:30px auto;
+
+max-width:600px;
+
+font-size:17px;
+
+line-height:1.9;
+
+opacity:.8;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:16px 36px;
+
+border-radius:999px;
+
+background:linear-gradient(135deg,#F6C7D8,#F2AFC7);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+box-shadow:0 15px 35px rgba(242,175,199,.35);
+
+transition:.35s;
+
+}
+
+.hero-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 25px 50px rgba(242,175,199,.45);
+
+}
+
+.hero-flower{
+
+position:absolute;
+
+font-size:42px;
+
+opacity:.25;
+
+}
+
+.left{
+
+left:8%;
+
+top:90px;
+
+}
+
+.right{
+
+right:8%;
+
+top:120px;
+
 }
 
 .logo{
@@ -137,30 +383,48 @@ transition:0.25s ease;
 border:1px solid rgba(232,168,188,0.15);
 }
 
+.card{
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.75);
+
+border-radius:28px;
+
+padding:28px;
+
+box-shadow:
+
+0 20px 50px rgba(255,180,205,.18),
+
+0 5px 20px rgba(255,255,255,.5);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
 .card:hover{
-transform:translateY(-8px) scale(1.01);
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 35px 70px rgba(255,170,200,.3);
+
 }
 
-.card h3{
-font-family:'Playfair Display', serif;
-font-size:17px;
-margin-bottom:10px;
-color:#9D6B7D;
-}
+.card img{
 
-.card p{
-font-size:13px;
-opacity:0.75;
-line-height:1.6;
-}
+border-radius:18px;
 
-.card a{
-display:inline-block;
-margin-top:12px;
-font-size:13px;
-color:var(--accent-dark);
-text-decoration:none;
-font-weight:600;
+margin-bottom:18px;
+
 }
 
 footer{
@@ -209,7 +473,37 @@ transition:0.3s ease;
 .social-bar a:hover::after{
 width:70%;
 }
+h2{
 
+font-family:'Cormorant Garamond',serif;
+
+font-size:44px;
+
+font-weight:600;
+
+text-align:center;
+
+margin:90px 0 50px;
+
+color:#C57D98;
+
+position:relative;
+
+}
+
+h2::after{
+
+content:"✿";
+
+display:block;
+
+margin-top:10px;
+
+font-size:20px;
+
+opacity:.4;
+
+}
 
 </style>
 </head>
@@ -223,17 +517,41 @@ width:70%;
 
 <header>
 
-<div class="logo">LaxNar Studio</div>
-<div class="tagline">Healing • Digital Journey • Soft Living</div>
+<div class="hero-flower left">🌸</div>
+<div class="hero-flower right">🌸</div>
 
-<a class="shop-btn" href="https://laxnarstudio.gumroad.com" target="_blank">
-  Visit My Shop 🛍️
+<div class="logo">
+LaxNara Wini
+</div>
+
+<div class="hero-subtitle">
+
+Manifest Your Dream Life
+
+</div>
+
+<p class="hero-text">
+
+A soft space for manifestation,
+abundance, healing and becoming
+the highest version of yourself.
+
+</p>
+
+<a class="hero-btn" href="#blogs">
+
+Visit my Shop
+
 </a>
 
 <div class="header-socials">
-  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
-  <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
-  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+
+<a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
+
+<a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
+
+<a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+
 </div>
 
 </header>
