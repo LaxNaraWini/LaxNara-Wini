@@ -3,192 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Manifest Money as a Beginner — LaxNar Studio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+<title>How to Manifest Money as a Beginner — LaxNara Wini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
-/* 🌸 BASE THEME (CLEAN BABY PINK) */
+:root{
+  --pink:#F1AFC6;
+  --pink-dark:#D47A9C;
+  --pink-light:#FFE7F1;
+  --text:#66535D;
+  --glass:rgba(255,255,255,0.6);
+  --glass-border:rgba(255,255,255,0.8);
+}
+
+/* CURSOR */
+.cursor{position:fixed;width:12px;height:12px;background:var(--pink-dark);border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.1s ease;mix-blend-mode:multiply;}
+.cursor-glow{position:fixed;width:40px;height:40px;border:1.5px solid rgba(212,122,156,0.4);border-radius:50%;pointer-events:none;z-index:99998;transition:all 0.15s ease;}
+.cursor-particle{position:fixed;border-radius:50%;pointer-events:none;z-index:99997;opacity:0;animation:particleFade 0.6s ease forwards;}
+@keyframes particleFade{0%{opacity:0.8;transform:scale(1);}100%{opacity:0;transform:scale(0);}}
+
 body{
-  margin:0;
-  font-family:Poppins;
-  background: linear-gradient(180deg, #fff1f6, #ffe4ec, #fff6fa);
-  color:#3a2f33;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#FFF9FC,#FFF5F8,#FFF9FC);
+  color:var(--text);
   overflow-x:hidden;
+  cursor:none;
 }
 
-/* 🌸 brand */
-.top-brand{
-  text-align:center;
-  padding-top:20px;
-  font-family:"Brush Script MT", cursive;
-  font-size:34px;
-  color:#d46b8c;
-}
+/* BACKGROUND */
+.background{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-100;overflow:hidden;}
+.blob{position:absolute;border-radius:50%;filter:blur(140px);opacity:.4;animation:floatBlob 18s ease-in-out infinite alternate;}
+.blob1{width:450px;height:450px;background:#FFD5E5;top:-150px;left:-150px;}
+.blob2{width:420px;height:420px;background:#FFE7F2;top:20%;right:-120px;animation-duration:14s;}
+.blob3{width:350px;height:350px;background:#FFD9EA;bottom:-120px;left:20%;animation-duration:12s;}
+.blob4{width:300px;height:300px;background:#FFF0F6;bottom:50px;right:10%;animation-duration:16s;}
+@keyframes floatBlob{0%{transform:translateY(0) scale(1);}100%{transform:translateY(-40px) scale(1.08);}}
 
-/* 🌸 layout */
-.blog-post{
-  max-width:800px;
-  margin:90px auto;
-  padding:25px;
-}
+/* SPARKLES */
+.sparkles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.sparkle{position:absolute;width:3px;height:3px;background:rgba(241,175,198,0.7);border-radius:50%;animation:twinkle 3s ease-in-out infinite;}
+@keyframes twinkle{0%,100%{opacity:0.1;transform:scale(0.5);}50%{opacity:1;transform:scale(1.5);}}
 
-/* 🌸 title */
-h1{
-  text-align:center;
-  font-family:'Playfair Display', serif;
-  color:#c85c86;
-  font-size:42px;
+/* NAVIGATION */
+nav{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  width:92%;max-width:1200px;padding:16px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.7);border-radius:100px;
+  box-shadow:0 15px 40px rgba(255,190,210,0.18);z-index:999;transition:all 0.4s ease;
 }
-
-.intro{
-  text-align:center;
-  color:#6a5a60;
-  margin-bottom:40px;
+nav.scrolled{background:rgba(255,255,255,0.75);box-shadow:0 20px 50px rgba(255,190,210,0.25);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--pink-dark);font-weight:600;text-decoration:none;}
+.nav-back{
+  text-decoration:none;padding:10px 22px;border-radius:999px;
+  background:linear-gradient(135deg,#F8C7D9,#F1AFC6);
+  color:white;font-weight:600;font-size:13px;
+  transition:0.4s;box-shadow:0 10px 25px rgba(241,175,198,0.3);
 }
+.nav-back:hover{transform:translateY(-3px);box-shadow:0 18px 35px rgba(241,175,198,0.4);}
 
-/* 🌸 headings */
-h2{
-  margin-top:30px;
-  color:#d46b8c;
-  font-family:'Playfair Display', serif;
+/* CHERRY CANVAS */
+.cherry-canvas{position:fixed;inset:0;pointer-events:none;z-index:1;}
+
+/* MOON */
+.moon{position:fixed;top:80px;right:80px;width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#FFFDFE,#FFF0F8);box-shadow:0 0 30px rgba(255,255,255,0.9),0 0 70px rgba(255,210,235,0.6),0 0 130px rgba(255,210,235,0.3);animation:moonGlow 5s ease-in-out infinite alternate;z-index:2;pointer-events:none;}
+@keyframes moonGlow{from{transform:scale(1);}to{transform:scale(1.05);}}
+
+/* BLOG WRAPPER */
+.blog-wrapper{max-width:780px;margin:0 auto;padding:140px 25px 80px;position:relative;z-index:5;}
+
+/* BLOG HEADER */
+.blog-header{text-align:center;margin-bottom:60px;}
+.blog-category{
+  display:inline-block;padding:8px 20px;border-radius:999px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.8);
+  font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:var(--pink-dark);margin-bottom:24px;
 }
-
-/* 🌸 text */
-p{
-  line-height:1.9;
-  font-size:16px;
-  color:#4a3a40;
+.blog-header h1{
+  font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;
+  line-height:1.15;color:#C87496;margin-bottom:20px;
 }
+.blog-intro{font-size:17px;line-height:2;color:#6a5a60;max-width:640px;margin:0 auto;}
 
-/* 🌸 tip list */
-.tip-list{
-  list-style:none;
-  padding:0;
-  margin:20px 0;
-}
-
-.tip-list li{
-  padding:10px 18px;
-  margin-bottom:10px;
-  background:rgba(255,255,255,0.65);
-  border-left:3px solid #f7a8c4;
-  border-radius:8px;
-  font-style:italic;
-  color:#c85c86;
-  font-size:15px;
-  line-height:1.7;
-}
-
-/* 🌸 quote */
-.quote{
-  margin-top:40px;
-  padding:25px;
-  text-align:center;
-  font-style:italic;
-  color:#c85c86;
-  border-left:2px solid #f7a8c4;
-  border-right:2px solid #f7a8c4;
-  background: rgba(255,255,255,0.6);
-  border-radius:12px;
-}
-
-/* 🌸 CTA section */
-.cta{
-  margin-top:60px;
-  padding:25px;
-  border-radius:16px;
-  background: rgba(255,255,255,0.65);
-  border:1px solid rgba(247,168,196,0.35);
-  text-align:center;
-}
-
-.cta a{
-  display:inline-block;
-  margin-top:12px;
-  padding:10px 18px;
-  background:#d46b8c;
-  color:white;
-  text-decoration:none;
-  border-radius:20px;
-  transition:0.3s;
-}
-
-.cta a:hover{
-  transform:scale(1.05);
-  background:#c85c86;
-}
-
-/* 🌸 back button */
-.back-home-bottom{
-  display:inline-block;
-  margin-top:10px;
-  padding:12px 22px;
-  background:#d46b8c;
-  color:white;
-  text-decoration:none;
-  border-radius:999px;
-  transition:0.3s;
-}
-
-.back-home-bottom:hover{
-  background:#c85c86;
-}
-
-/* 🌸 social links */
-.blog-socials{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:70px;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-}
-
+/* SOCIALS */
+.blog-socials{display:flex;justify-content:center;gap:10px;margin-bottom:50px;flex-wrap:wrap;}
 .blog-socials a{
-  text-decoration:none;
-  color:#c85c86;
-  font-size:13px;
-  padding:8px 14px;
-  background:rgba(255,255,255,0.85);
-  border-radius:999px;
+  text-decoration:none;color:var(--pink-dark);font-size:13px;
+  padding:8px 18px;background:rgba(255,255,255,0.75);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.8);border-radius:999px;transition:0.3s;
+  box-shadow:0 8px 20px rgba(255,185,210,0.12);
+}
+.blog-socials a:hover{background:#F8C7D9;color:white;transform:translateY(-3px);}
+
+/* DIVIDER */
+.blog-divider{display:flex;align-items:center;gap:16px;margin:50px 0;}
+.blog-divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,#E8B5C9,transparent);}
+.blog-divider-flower{font-size:18px;color:var(--pink-dark);}
+
+/* CONTENT GLASS CARD */
+.content-card{
+  background:rgba(255,255,255,0.58);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.8);border-radius:32px;
+  padding:50px;margin-bottom:30px;
+  box-shadow:0 20px 50px rgba(255,185,210,0.12);
+  position:relative;overflow:hidden;
+}
+.content-card::before{
+  content:'';position:absolute;width:200px;height:200px;
+  background:rgba(255,215,230,0.35);border-radius:50%;
+  filter:blur(60px);top:-100px;right:-100px;pointer-events:none;
+}
+
+/* HEADINGS */
+.content-card h2{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;
+  color:#C87496;margin:40px 0 18px;line-height:1.2;
+}
+.content-card h2:first-child{margin-top:0;}
+
+/* TEXT */
+.content-card p{font-size:16px;line-height:2;color:#4a3a40;margin-bottom:20px;}
+
+/* AFFIRMATION LIST */
+.tip-list{list-style:none;padding:0;margin:24px 0;}
+.tip-list li{
+  padding:14px 20px;margin-bottom:12px;
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);
+  border-left:3px solid #F1AFC6;border-radius:12px;
+  font-style:italic;color:var(--pink-dark);font-size:15px;line-height:1.7;
+  box-shadow:0 8px 20px rgba(255,185,210,0.1);
   transition:0.3s;
 }
+.tip-list li:hover{transform:translateX(4px);box-shadow:0 12px 28px rgba(255,185,210,0.18);}
 
-/* 🌸 fade animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
+/* QUOTE */
+.quote{
+  margin:40px 0;padding:35px;text-align:center;
+  font-style:italic;font-family:'Cormorant Garamond',serif;
+  font-size:26px;color:var(--pink-dark);line-height:1.6;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.8);border-radius:24px;
+  box-shadow:0 15px 40px rgba(255,185,210,0.12);
+  position:relative;
 }
+.quote::before{content:'"';position:absolute;top:-20px;left:20px;font-size:80px;color:rgba(212,122,156,0.15);font-family:'Cormorant Garamond',serif;line-height:1;}
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+/* SIGN OFF */
+.sign-off{
+  text-align:center;padding:30px;font-size:17px;
+  color:#6a5a60;font-style:italic;
 }
+.sign-off strong{font-family:'Great Vibes',cursive;font-size:28px;color:var(--pink-dark);display:block;margin-top:8px;}
 
+/* CTA */
+.cta-card{
+  background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.8);border-radius:32px;
+  padding:45px;text-align:center;margin-bottom:30px;
+  box-shadow:0 20px 50px rgba(255,185,210,0.15);
+}
+.cta-card h3{font-family:'Cormorant Garamond',serif;font-size:38px;color:#C87496;margin-bottom:16px;}
+.cta-card p{font-size:16px;line-height:2;color:#6a5a60;margin-bottom:28px;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-card a{
+  display:inline-block;padding:16px 40px;border-radius:999px;
+  background:linear-gradient(135deg,#F8C7D9,#F1AFC6);
+  color:white;text-decoration:none;font-weight:600;font-size:15px;
+  transition:0.4s;box-shadow:0 15px 35px rgba(241,175,198,0.3);
+}
+.cta-card a:hover{transform:translateY(-4px);box-shadow:0 25px 50px rgba(241,175,198,0.42);}
+
+/* BACK BUTTON */
+.back-wrap{text-align:center;margin-top:10px;margin-bottom:60px;}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 30px;border-radius:999px;
+  background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.8);
+  color:var(--pink-dark);text-decoration:none;font-weight:600;font-size:14px;
+  transition:0.4s;box-shadow:0 12px 30px rgba(255,185,210,0.15);
+}
+.back-btn:hover{background:#F8C7D9;color:white;transform:translateY(-3px);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(25px);transition:all 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#FFF5F8;}
+::-webkit-scrollbar-thumb{background:#E8AFC5;border-radius:20px;}
+::selection{background:#F7C8DA;color:white;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .blog-header h1{font-size:40px;}
+  .content-card{padding:30px 22px;}
+  .moon{width:50px;height:50px;top:90px;right:15px;}
+  .quote{font-size:22px;padding:25px;}
+}
 </style>
-
 </head>
-
 <body>
 
-<div class="top-brand">LaxNar Studio</div>
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
-<div class="blog-socials">
-  <a href="https://in.pinterest.com/laxnarstudio/" target="_blank">Pinterest</a>
-  <a href="https://www.instagram.com/laxnarstudio/" target="_blank">Instagram</a>
-  <a href="https://www.threads.net/@laxnarstudio" target="_blank">Threads</a>
+<!-- Background -->
+<div class="background">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="blob blob4"></div>
 </div>
 
-<div class="blog-post">
+<!-- Sparkles -->
+<div class="sparkles" id="sparkles"></div>
 
-<h1>How to Manifest Money as a Beginner</h1>
+<!-- Cherry Blossom Canvas -->
+<canvas class="cherry-canvas" id="cherryCanvas"></canvas>
 
-<p class="intro">
-A warm and honest guide to shifting your relationship with money and opening yourself up to receiving more of it with ease and without guilt.
-</p>
+<!-- Moon -->
+<div class="moon"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">LaxNara Wini</a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
+
+<!-- Blog Content -->
+<div class="blog-wrapper">
+
+   <!-- Socials -->
+  <div class="blog-socials reveal">
+    <a href="https://in.pinterest.com/laxnarawini/" target="_blank">Pinterest</a>
+    <a href="https://www.instagram.com/laxnarawini/" target="_blank">Instagram</a>
+    <a href="https://www.threads.net/@laxnarawini" target="_blank">Threads</a>
+    <a href="https://www.youtube.com/@LaxNaraWini" target="_blank">YouTube</a>
+  </div>
+  
+  <!-- Header -->
+  <div class="blog-header reveal">
+    <div class="blog-category">Manifestation</div>
+    <h1>How to Manifest Money as a Beginner</h1>
+    <p class="blog-intro">A warm and honest guide to shifting your relationship with money and opening yourself up to receiving more of it with ease and without guilt.</p>
+  </div>
+
+  <div class="blog-divider"><div class="blog-divider-line"></div><div class="blog-divider-flower">✿</div><div class="blog-divider-line"></div></div>
+
+  <!-- Main Content -->
+  <div class="content-card reveal">
 
 <h2>Your relationship with money matters more than you think</h2>
 <p>
@@ -234,40 +306,135 @@ Money is not the enemy and wanting more of it does not make you greedy. It makes
 Manifesting money as a beginner is really about two things working together which are healing the beliefs that have been blocking abundance from reaching you and consistently taking aligned action toward the financial life you desire. Neither one works as well without the other but together they create a powerful and genuine shift that over time begins to show up in very real and tangible ways in your life. You deserve financial freedom and abundance and it is absolutely available to you when you are willing to do the inner work and keep showing up for yourself with faith and patience. 🌸
 </p>
 
-<p>
-With so much love, LaxNar Studio 💗
-</p>
+  <div class="sign-off">
+      With so much love,
+      <strong>LaxNara Wini </strong>
+    </div>
 
-<div class="cta">
-  <h2>From LaxNar Studio</h2>
-  <p>
-    If you are ready to support your money manifestation journey with something beautiful and intentional, our Luxury Abundance and Wealth Affirmation Cards were created just for you. 50 powerful printable cards available to help you rewire your money mindset every single day.
-  </p>
-  <a href="https://laxnarstudio.gumroad.com/" target="_blank">Get Your Cards Now </a>
-</div>
+  </div>
 
-<div style="text-align:center; margin-top:35px;">
-  <a href="index.html" class="back-home-bottom">← Return to Homepage</a>
-</div>
+  <!-- CTA -->
+  <div class="cta-card reveal">
+    <h3>🌸 From LaxNara Wini</h3>
+    <p>If you are ready to support your manifestation journey with something beautiful and intentional, you are warmly invited to explore our collection of printable affirmation cards and ebooks in the shop, each one created with love to help you align with your dream life every single day.</p>
+    <a href="https://laxnarstudio.gumroad.com/" target="_blank">Visit Shop </a>
+  </div>
+
+  <!-- Back Button -->
+  <div class="back-wrap reveal">
+    <a href="index.html" class="back-btn">← Return to Homepage</a>
+  </div>
 
 </div>
 
 <script>
-const elements=document.querySelectorAll("h2,p,.quote,.cta,.tip-list");
+// CURSOR
+const cursor = document.getElementById('cursor');
+const cursorGlow = document.getElementById('cursorGlow');
+let mouseX=0,mouseY=0,glowX=0,glowY=0;
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:0.15});
-
-elements.forEach(el=>{
-  el.classList.add("fade-in");
-  observer.observe(el);
+document.addEventListener('mousemove', e => {
+  mouseX=e.clientX; mouseY=e.clientY;
+  cursor.style.left=mouseX-6+'px';
+  cursor.style.top=mouseY-6+'px';
+  spawnParticle(mouseX,mouseY);
 });
-</script>
 
+function animateGlow(){
+  glowX+=(mouseX-glowX)*0.12;
+  glowY+=(mouseY-glowY)*0.12;
+  cursorGlow.style.left=glowX-20+'px';
+  cursorGlow.style.top=glowY-20+'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+document.querySelectorAll('a').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';cursorGlow.style.transform='scale(1.5)';});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';cursorGlow.style.transform='scale(1)';});
+});
+
+let pt=0;
+function spawnParticle(x,y){
+  pt++;
+  if(pt%4!==0) return;
+  const colors=['#F8C7D9','#F1AFC6','#E09AB7','#D47A9C','#FFE7F1'];
+  const p=document.createElement('div');
+  p.className='cursor-particle';
+  p.style.left=(x+(Math.random()-0.5)*16)+'px';
+  p.style.top=(y+(Math.random()-0.5)*16)+'px';
+  const sz=Math.random()*5+3;
+  p.style.width=sz+'px'; p.style.height=sz+'px';
+  p.style.background=colors[Math.floor(Math.random()*colors.length)];
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),600);
+}
+
+// SPARKLES
+const sparklesContainer=document.getElementById('sparkles');
+for(let i=0;i<35;i++){
+  const s=document.createElement('div');
+  s.className='sparkle';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*4+'s';
+  s.style.animationDuration=(2+Math.random()*3)+'s';
+  sparklesContainer.appendChild(s);
+}
+
+// CHERRY BLOSSOMS
+const canvas=document.getElementById('cherryCanvas');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+
+const petals=[];
+for(let i=0;i<22;i++){
+  petals.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height-canvas.height,
+    size:Math.random()*10+5,
+    speedY:Math.random()*1.2+0.4,
+    speedX:(Math.random()-0.5)*0.8,
+    rotation:Math.random()*360,
+    rotSpeed:(Math.random()-0.5)*1.5,
+    opacity:Math.random()*0.45+0.25,
+    color:['#F8C7D9','#F1AFC6','#FFAEC9','#FFD5E8','#E8A0BE'][Math.floor(Math.random()*5)]
+  });
+}
+
+function drawPetal(x,y,size,rotation,color,opacity){
+  ctx.save();ctx.translate(x,y);ctx.rotate(rotation*Math.PI/180);
+  ctx.globalAlpha=opacity;ctx.fillStyle=color;ctx.beginPath();
+  ctx.moveTo(0,-size);
+  ctx.bezierCurveTo(size*0.6,-size*0.8,size*0.8,0,0,size*0.5);
+  ctx.bezierCurveTo(-size*0.8,0,-size*0.6,-size*0.8,0,-size);
+  ctx.fill();ctx.restore();
+}
+
+function animatePetals(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  petals.forEach(p=>{
+    p.y+=p.speedY; p.x+=p.speedX+Math.sin(p.y*0.015)*0.4; p.rotation+=p.rotSpeed;
+    if(p.y>canvas.height+20){p.y=-20;p.x=Math.random()*canvas.width;}
+    drawPetal(p.x,p.y,p.size,p.rotation,p.color,p.opacity);
+  });
+  requestAnimationFrame(animatePetals);
+}
+animatePetals();
+
+// NAVBAR SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// REVEAL
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting) setTimeout(()=>entry.target.classList.add('visible'),i*100);
+  });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>
