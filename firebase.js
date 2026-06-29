@@ -18,19 +18,18 @@
   const app = initializeApp(firebaseConfig);
 </script>
 
-// 2. COMMENT SECTION LOGIC
+// 2. COMMENT LOGIC
 document.addEventListener("DOMContentLoaded", function () {
-  const commentForm = document.getElementById('submit-btn');
-  const commentsContainer = document.getElementById('comments-container');
-  const currentBlogId = window.location.pathname; // Identifies which blog page this is
+  const postBtn = document.getElementById('post-comment');
+  const commentsContainer = document.getElementById('comments-list');
+  const currentBlogId = window.location.pathname; 
 
-  // Guard check: Only run if the HTML elements exist on the page
-  if (!commentForm || !commentsContainer) return;
+  if (!postBtn || !commentsContainer) return;
 
   // Save comment to Firestore
-  commentForm.addEventListener('click', function() {
-    const name = document.getElementById('username').value;
-    const text = document.getElementById('comment-text').value;
+  postBtn.addEventListener('click', function() {
+    const name = document.getElementById('username-input').value;
+    const text = document.getElementById('comment-input').value;
 
     if (name && text) {
       db.collection("comments").add({
@@ -40,16 +39,17 @@ document.addEventListener("DOMContentLoaded", function () {
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
-        document.getElementById('username').value = '';
-        document.getElementById('comment-text').value = '';
+        // Clear text fields after posting
+        document.getElementById('username-input').value = '';
+        document.getElementById('comment-input').value = '';
       })
       .catch((error) => console.error("Error adding comment: ", error));
     } else {
-      alert("Please fill out both fields!");
+      alert("Please fill out both your name and comment!");
     }
   });
 
-  // Fetch and display comments for this blog only
+  // Fetch and display comments
   db.collection("comments")
     .where("blogId", "==", currentBlogId)
     .orderBy("timestamp", "desc")
@@ -57,17 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
       commentsContainer.innerHTML = "";
       
       if (querySnapshot.empty) {
-        commentsContainer.innerHTML = "<p style='color: #666;'>No comments yet. Be the first!</p>";
+        commentsContainer.innerHTML = "<p style='color: #666; font-style: italic;'>No comments yet. Be the first!</p>";
         return;
       }
 
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const commentDiv = document.createElement('div');
-        commentDiv.style.borderBottom = "1px solid #eee";
-        commentDiv.style.padding = "10px 0";
+        commentDiv.style.borderBottom = "1px dashed rgba(241, 175, 198, 0.4)";
+        commentDiv.style.padding = "15px 5px";
         
-        commentDiv.innerHTML = `<strong>${data.username}</strong><p style='margin: 5px 0 0 0; color: #333;'>${data.comment}</p>`;
+        commentDiv.innerHTML = `<strong style="color: #D47A9C;">${data.username}</strong><p style='margin: 5px 0 0 0; color: #4a3a40; font-size: 15px;'>${data.comment}</p>`;
         commentsContainer.appendChild(commentDiv);
       });
     }, (error) => {
