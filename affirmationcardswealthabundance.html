@@ -203,6 +203,37 @@ nav.scrolled{background:rgba(255,255,255,0.75);box-shadow:0 20px 50px rgba(255,1
 ::-webkit-scrollbar-thumb{background:#E8AFC5;border-radius:20px;}
 ::selection{background:#F7C8DA;color:white;}
 
+#comments-section input, #comments-section textarea {
+  width: 100%;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(241, 175, 198, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+#post-comment {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F8C7D9, #F1AFC6);
+  color: white;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: none !important;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(241, 175, 198, 0.3);
+  margin-bottom: 30px;
+}
+#post-comment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(241, 175, 198, 0.42);
+}
+  
 /* RESPONSIVE */
 @media(max-width:768px){
   .blog-header h1{font-size:40px;}
@@ -384,23 +415,31 @@ Wealth and abundance are not things that only happen for certain people and not 
     <a href="https://laxnarstudio.gumroad.com/l/awmam" target="_blank">Visit Shop </a>
   </div>
 
+<!-- COMMENTS SECTION -->
 <section id="comments-section" class="reveal">
-  <h2>💬 Join the Conversation</h2>
+    <h2>💬 Join the Conversation</h2>
 
-  <div id="comment-box">
-    <input type="text" id="username" placeholder="Your Name" required>
-    <textarea id="comment-text" placeholder="Share your thoughts and reflections..." required></textarea>
-    <button id="submit-btn">Post Comment</button>
-  </div>
+    <div id="comment-form">
+        <!-- Input for Name -->
+        <input type="text" id="username-input" placeholder="Your Name" required>
+        
+        <!-- Input for Comment -->
+        <textarea id="comment-input" placeholder="Share your thoughts..." required></textarea>
 
-  <div id="comments-container">Loading comments...</div>
+        <!-- Submit Button -->
+        <button id="post-comment">Post Comment</button>
+    </div>
+
+    <!-- Container where comments show up -->
+    <div id="comments-list">Loading comments...</div>
 </section>
 
+<!-- FIREBASE UTILITIES & ENGINE -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
+<!-- LINK TO YOUR REUSABLE FIREBASE FILE -->
 <script src="firebase.js"></script>
-
  <!-- Back Button -->
   <div class="back-wrap reveal">
     <a href="index.html" class="back-btn">← Return to Homepage</a>
